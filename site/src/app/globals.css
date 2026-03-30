@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050608;
+  --foreground: #f9fafb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), "Times New Roman", serif;
+}
+
+.font-footer-title {
+  font-family: var(--font-footer-title), "Cormorant SC", "Times New Roman",
+    serif;
+  font-weight: 400;
+  color: white;
+}
+
+.font-footer-body {
+  font-family: var(--font-footer-body), "Cormorant Garamond", "Times New Roman",
+    serif;
+  font-weight: 400;
+  color: white;
+}
+
+.font-cormorant-sc {
+  font-family: var(--font-footer-title), "Cormorant SC", "Times New Roman",
+    serif;
+  font-weight: 400;
+}
+
+.font-cormorant-garamond {
+  font-family: var(--font-footer-body), "Cormorant Garamond", "Times New Roman",
+    serif;
+  font-weight: 400;
+}
