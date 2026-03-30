@@ -32,9 +32,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
-          generator_config_file: site/next.config.ts
 
       - name: Restore Next.js cache
         uses: actions/cache@v4
@@ -50,6 +47,9 @@ jobs:
 
       - name: Build with Next.js
         working-directory: site
+        env:
+          # Même chemin que l’URL GitHub Pages projet : /trianon/ pour ce dépôt
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         run: npx next build --webpack
 
       - name: Upload artifact

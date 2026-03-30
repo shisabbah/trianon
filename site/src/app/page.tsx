@@ -12,6 +12,9 @@ import tlv from "./asset/tlv.png";
 import societeLogo from "./asset/societe-generale-2.png";
 import vigne from "./asset/vigne.png";
 
+const publicAsset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 export default function Home() {
   return (
     <main className="bg-white text-neutral-900">
@@ -24,7 +27,10 @@ export default function Home() {
           loop
           playsInline
         >
-          <source src="/0_Villas_Hotels_3840x2160.mp4" type="video/mp4" />
+          <source
+            src={publicAsset("/0_Villas_Hotels_3840x2160.mp4")}
+            type="video/mp4"
+          />
         </video>
         <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pb-32 pt-40 lg:px-8">
           <div className="max-w-xl space-y-4">
