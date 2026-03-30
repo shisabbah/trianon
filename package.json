@@ -1,5 +1,5 @@
 {
   "name": "trianon",
   "private": true,
-  "workspaces": ["site"]
+  "description": "Le site Next.js vit dans site/ (npm install && npm run build s’y font dans ce dossier)."
 }
