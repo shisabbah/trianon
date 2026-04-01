@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+import { ContactSection } from "./components/ContactSection";
 import bloc1v from "./asset/bloc1v.jpg";
 import blocv2 from "./asset/blocv2.jpg";
 import blocv3 from "./asset/blocv3.jpg";
@@ -382,80 +384,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section
-        id="contact"
-        className="bg-white py-0 text-black"
-      >
-        <div className="mx-auto max-w-[1280px]">
-          <div className="px-6 py-24 lg:px-8">
-            <div className="mx-auto max-w-[596px]">
-              <h2 className="font-cormorant-sc text-center text-[40px] leading-[35px] font-normal text-black">
-                Contact
-              </h2>
-              <p className="mt-3 text-center font-cormorant-garamond text-[16px] leading-[16px] text-black">
-                Un premier échange permet souvent d’y voir plus clair.
-                <br />
-                Toute relation commence par une conversation.
-              </p>
-
-              <form className="mt-12 space-y-5">
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="mb-1 block font-cormorant-sc text-[16px] text-black"
-                  >
-                    Nom
-                  </label>
-                  <input
-                    id="contact-name"
-                    name="name"
-                    className="h-[38px] w-full rounded-[10px] border border-black/20 bg-white px-4 font-cormorant-sc text-[16px] text-black shadow-[0px_2px_4px_rgba(0,0,0,0.10)] outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="mb-1 block font-cormorant-sc text-[16px] text-black"
-                  >
-                    Email
-                  </label>
-                  <input
-                    id="contact-email"
-                    name="email"
-                    type="email"
-                    className="h-[38px] w-full rounded-[10px] border border-black/20 bg-white px-4 font-cormorant-sc text-[16px] text-black shadow-[0px_2px_4px_rgba(0,0,0,0.10)] outline-none"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="contact-message"
-                    className="mb-1 block font-cormorant-sc text-[16px] text-black"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="contact-message"
-                    name="message"
-                    className="h-[122px] w-full resize-none rounded-[10px] border border-black/20 bg-white px-4 py-3 font-cormorant-sc text-[16px] text-black shadow-[0px_2px_4px_rgba(0,0,0,0.10)] outline-none"
-                  />
-                </div>
-
-                <div className="pt-3 text-center">
-                  <button
-                    type="submit"
-                    className="h-[38px] min-w-[142px] bg-[#B9A889] px-8 font-cormorant-sc text-[16px] text-white"
-                  >
-                    Envoyer
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </main>
   );
 }

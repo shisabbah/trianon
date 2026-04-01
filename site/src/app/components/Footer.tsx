@@ -96,17 +96,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="#profils">
+                <a className="font-footer-title hover:text-white" href="/profils">
                   Profils
                 </a>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="#approche">
+                <a className="font-footer-title hover:text-white" href="/approche">
                   Approche
                 </a>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="#contact">
+                <a className="font-footer-title hover:text-white" href="/contact">
                   Contact
                 </a>
               </li>
