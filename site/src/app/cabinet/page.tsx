@@ -9,7 +9,7 @@ import vigneCampagne from "../asset/vigne-campagne1.jpg";
 
 export default function CabinetPage() {
   return (
-    <main className="bg-white text-neutral-900 pt-44">
+    <main className="bg-white pt-36 text-neutral-900 sm:pt-40 md:pt-44">
       <section className="relative min-h-[760px] overflow-hidden bg-white pb-24 pt-8 sm:min-h-[860px] sm:pb-28 sm:pt-10">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
           <Image
@@ -21,17 +21,17 @@ export default function CabinetPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="space-y-14">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-10 sm:space-y-14">
             <div className="space-y-3">
-              <h1 className="font-cormorant-sc text-[44px] font-normal leading-none text-black">
+              <h1 className="font-cormorant-sc text-[32px] font-normal leading-none text-black sm:text-[38px] md:text-[44px]">
                 Le Cabinet
               </h1>
               <div className="h-px w-full bg-neutral-300" />
             </div>
 
-            <div className="mx-auto mt-40 grid max-w-[880px] items-center gap-12 md:grid-cols-[315px_minmax(0,1fr)]">
-              <div className="relative h-[315px] w-[315px] overflow-hidden rounded-sm shadow-md">
+            <div className="mx-auto mt-16 grid max-w-[880px] items-center gap-8 sm:mt-24 sm:gap-10 md:mt-32 md:grid-cols-[minmax(0,315px)_minmax(0,1fr)] md:gap-12 lg:mt-40">
+              <div className="relative mx-auto aspect-square w-full max-w-[min(100%,315px)] overflow-hidden rounded-sm shadow-md">
                 <Image
                   src={immeubleParis}
                   alt="Façade du cabinet"
@@ -41,7 +41,7 @@ export default function CabinetPage() {
               </div>
 
               <div className="space-y-4">
-                <h2 className="font-cormorant-sc text-[38px] leading-none text-black">
+                <h2 className="font-cormorant-sc text-[28px] leading-tight text-black sm:text-[32px] md:text-[38px] md:leading-none">
                   Fondements du Cabinet
                 </h2>
                 <p className="font-cormorant-garamond text-[14px] font-bold uppercase tracking-wide text-neutral-700">
@@ -85,17 +85,17 @@ export default function CabinetPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="font-cormorant-sc text-[44px] leading-none text-black">
+            <h2 className="font-cormorant-sc text-[32px] leading-tight text-black sm:text-[38px] md:text-[44px] md:leading-none">
               Notre méthode
             </h2>
-            <p className="mx-auto mt-3 max-w-[760px] font-cormorant-garamond text-[20px] leading-[1.2] text-black">
+            <p className="mx-auto mt-3 max-w-[760px] font-cormorant-garamond text-[16px] leading-snug text-black sm:text-[18px] md:text-[20px] md:leading-[1.2]">
               Avant toute recommandation, nous analysons votre situation dans sa
               globalité afin de construire une stratégie patrimoniale cohérente
               et adaptée à vos objectifs.
             </p>
-            <p className="mx-auto mt-1 max-w-[760px] font-cormorant-garamond text-[20px] leading-[1.2] text-black">
+            <p className="mx-auto mt-1 max-w-[760px] font-cormorant-garamond text-[16px] leading-snug text-black sm:text-[18px] md:text-[20px] md:leading-[1.2]">
               Notre accompagnement repose sur trois principes essentiels.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function CabinetPage() {
           <div className="absolute inset-0 bg-black/45" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div className="space-y-2 text-white">
             <div className="text-[30px] tracking-[0.18em]">TRIANON CAPITAL</div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-neutral-200">
@@ -158,7 +158,7 @@ export default function CabinetPage() {
           </div>
 
           <div className="space-y-5 text-white">
-            <h2 className="font-cormorant-sc text-[46px] leading-none">
+            <h2 className="font-cormorant-sc text-[clamp(28px,6vw,46px)] leading-tight md:leading-none">
               Planifier un premier échange
             </h2>
             <div className="max-w-3xl space-y-3 font-cormorant-garamond text-[17px] leading-[1.3] text-neutral-100">

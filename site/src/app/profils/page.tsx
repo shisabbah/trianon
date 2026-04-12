@@ -55,17 +55,17 @@ const profiles: {
 
 export default function ProfilsPage() {
   return (
-    <main className="bg-white pt-52 text-neutral-900 sm:pt-56 md:pt-60">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="space-y-3 pt-4 md:pt-6">
-          <h1 className="font-cormorant-sc text-[44px] font-normal uppercase leading-none text-black">
+    <main className="bg-white pt-40 text-neutral-900 sm:pt-48 md:pt-52 lg:pt-60">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="space-y-3 pt-2 sm:pt-4 md:pt-6">
+          <h1 className="font-cormorant-sc text-[32px] font-normal uppercase leading-none text-black sm:text-[38px] md:text-[44px]">
             Profils
           </h1>
           <div className="h-px w-full bg-neutral-300" />
         </div>
 
-        <section className="mt-24 text-left sm:mt-28 md:mt-36 lg:mt-44">
-          <div className="max-w-xl md:ml-[33%]">
+        <section className="mt-14 text-left sm:mt-20 md:mt-28 lg:mt-36 xl:mt-44">
+          <div className="max-w-xl md:ml-0 lg:ml-[33%]">
             <h2 className="font-cormorant-sc text-[28px] font-normal uppercase leading-tight tracking-wide text-black sm:text-[32px]">
               Des parcours uniques,
               <br />

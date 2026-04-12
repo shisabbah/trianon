@@ -72,7 +72,7 @@ const pillars: {
 
 export default function ApprochePage() {
   return (
-    <main className="bg-white pt-44 text-neutral-900">
+    <main className="bg-white pt-36 text-neutral-900 sm:pt-40 md:pt-44">
       <section className="relative min-h-[760px] overflow-hidden bg-white pb-24 pt-8 sm:min-h-[860px] sm:pb-28 sm:pt-10">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
           <Image
@@ -84,16 +84,16 @@ export default function ApprochePage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="space-y-14">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="space-y-10 sm:space-y-14">
             <div className="space-y-3">
-              <h1 className="font-cormorant-sc text-[44px] font-normal uppercase leading-none text-black">
+              <h1 className="font-cormorant-sc text-[32px] font-normal uppercase leading-none text-black sm:text-[38px] md:text-[44px]">
                 Approche
               </h1>
               <div className="h-px w-full bg-neutral-300" />
             </div>
 
-            <div className="mx-auto mt-40 w-full max-w-[880px] md:flex md:justify-end">
+            <div className="mx-auto mt-16 w-full max-w-[880px] sm:mt-24 md:mt-32 md:flex md:justify-end lg:mt-40">
               <div className="w-full max-w-xl space-y-5 text-left">
                 <h2 className="font-cormorant-sc text-[22px] font-normal uppercase leading-snug tracking-[0.04em] text-black sm:text-[26px] md:text-[28px]">
                   Une stratégie patrimoniale pensée comme un système
@@ -265,10 +265,8 @@ export default function ApprochePage() {
 
         <div className="relative z-10 mx-auto flex min-h-[min(88vh,860px)] w-full max-w-[1600px] items-center justify-start px-6 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-20 xl:px-20 2xl:pl-24">
           <div className="w-full max-w-[min(100%,620px)] text-left text-white">
-            <h2 className="font-cormorant-sc text-[clamp(28px,5.2vw,46px)] font-normal uppercase leading-[1.12] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
-              <span className="inline-block whitespace-nowrap">
-                Une approche exigeante, sans
-              </span>
+            <h2 className="font-cormorant-sc text-[clamp(24px,5.2vw,46px)] font-normal uppercase leading-[1.12] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)] text-balance">
+              Une approche exigeante, sans
               <br />
               logique commerciale
             </h2>

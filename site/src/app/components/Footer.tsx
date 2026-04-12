@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import fondFooter from "../asset/fond-footer.png";
 
@@ -58,17 +59,17 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/25" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 py-14 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         <div className="text-center">
-          <div className="text-[14px] tracking-[0.35em] text-neutral-100">
+          <div className="text-[12px] tracking-[0.28em] text-neutral-100 sm:text-[14px] sm:tracking-[0.35em]">
             TRIANON CAPITAL
           </div>
-          <div className="mt-2 text-[12px] uppercase tracking-[0.35em] text-neutral-300">
+          <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-neutral-300 sm:text-[12px] sm:tracking-[0.35em]">
             BOUTIQUE D’INGENIERIE FINANCIERE
           </div>
         </div>
 
-        <div className="mx-auto mt-12 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto mt-10 grid gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
               À propos
@@ -84,31 +85,46 @@ export default function Footer() {
             <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
               Liens rapides
             </div>
-            <ul className="space-y-3 text-[16px]">
+            <ul className="space-y-3 text-[15px] sm:text-[16px]">
               <li>
-                <a className="font-footer-title hover:text-white" href="#cabinet">
+                <Link
+                  className="font-footer-title hover:text-white"
+                  href="/"
+                >
                   Accueil
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="#cabinet">
+                <Link
+                  className="font-footer-title hover:text-white"
+                  href="/cabinet"
+                >
                   Le cabinet
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="/profils">
+                <Link
+                  className="font-footer-title hover:text-white"
+                  href="/profils"
+                >
                   Profils
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="/approche">
+                <Link
+                  className="font-footer-title hover:text-white"
+                  href="/approche"
+                >
                   Approche
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="font-footer-title hover:text-white" href="/contact">
+                <Link
+                  className="font-footer-title hover:text-white"
+                  href="/contact"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -154,10 +170,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-neutral-200/30 pt-6 text-center">
-          <div className="font-footer-title text-[16px] leading-[16px]">
-            2026 © Tous droits réservés par Trianon Capital - Mentions légales
-            - Politique de confidentialité
+        <div className="mt-10 border-t border-neutral-200/30 pt-6 text-center sm:mt-12">
+          <div className="font-footer-title mx-auto max-w-4xl text-[12px] leading-snug sm:text-[14px] md:text-[16px] md:leading-[1.35]">
+            2026 © Tous droits réservés par Trianon Capital — Mentions légales —
+            Politique de confidentialité
           </div>
         </div>
       </div>

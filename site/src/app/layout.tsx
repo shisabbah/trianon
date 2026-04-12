@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     "Structurer, protéger, bâtir : Trianon Capital accompagne dirigeants et familles dans leurs décisions financières de long terme.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
