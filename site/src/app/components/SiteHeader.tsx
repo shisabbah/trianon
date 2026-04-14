@@ -12,6 +12,18 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+/** Libellés affichés en capitales comme sur la maquette d’accueil */
+const navLabelDisplay = (label: string) => {
+  const map: Record<string, string> = {
+    Accueil: "ACCUEIL",
+    "Le Cabinet": "LE CABINET",
+    Profils: "PROFILS",
+    Approche: "APPROCHE",
+    Contact: "CONTACT",
+  };
+  return map[label] ?? label.toUpperCase();
+};
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -34,8 +46,8 @@ export default function SiteHeader() {
     ? "absolute inset-x-0 top-0 z-50 bg-gradient-to-b from-black/90 via-black/40 to-transparent"
     : "absolute inset-x-0 top-0 z-50 border-b border-neutral-200/80 bg-white";
 
-  const textClass = isHome ? "text-neutral-100" : "text-neutral-900";
-  const subTextClass = isHome ? "text-neutral-300" : "text-neutral-700";
+  const textClass = isHome ? "text-white" : "text-neutral-900";
+  const subTextClass = isHome ? "text-white" : "text-neutral-700";
   const menuPanelClass = isHome
     ? "bg-black/96 text-neutral-100"
     : "bg-white text-neutral-900";
@@ -79,27 +91,38 @@ export default function SiteHeader() {
         <div
           className={`mx-auto max-w-[min(100%,280px)] px-12 text-center sm:max-w-none sm:px-14 md:px-0 ${textClass}`}
         >
-          <div className="font-cormorant-sc text-[12px] tracking-[0.28em] sm:text-[14px] sm:tracking-[0.35em]">
+          <div className="font-cormorant-sc text-[13px] tracking-[0.3em] text-white sm:text-[15px] sm:tracking-[0.35em] md:text-[16px]">
             TRIANON CAPITAL
           </div>
           <div
-            className={`font-cormorant-garamond mt-1 text-[10px] uppercase tracking-[0.28em] sm:text-[12px] sm:tracking-[0.35em] ${subTextClass}`}
+            className={`font-cormorant-sc mt-1.5 text-[9px] uppercase tracking-[0.26em] sm:text-[10px] sm:tracking-[0.3em] md:text-[11px] md:tracking-[0.32em] ${subTextClass}`}
           >
-            BOUTIQUE D’INGENIERIE FINANCIERE
+            BOUTIQUE D’INGÉNIERIE FINANCIÈRE
           </div>
         </div>
 
         <nav
-          className={`pointer-events-auto mt-6 hidden flex-wrap justify-center gap-x-8 gap-y-2 text-[15px] md:flex lg:gap-x-12 lg:text-[16px] ${textClass}`}
+          className={`pointer-events-auto mt-7 hidden flex-wrap justify-center gap-y-2 md:flex ${textClass} ${
+            isHome
+              ? "gap-x-10 text-[13px] uppercase tracking-[0.14em] lg:gap-x-14 lg:text-[14px] lg:tracking-[0.16em]"
+              : "gap-x-8 text-[15px] lg:gap-x-12 lg:text-[16px]"
+          }`}
           aria-label="Navigation principale"
         >
           {navItems.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="font-cormorant-sc hover:opacity-80"
+              className={`font-cormorant-sc hover:opacity-85 ${textClass}`}
             >
-              {label}
+              {isHome ? (
+                <>
+                  <span className="sr-only">{label}</span>
+                  <span aria-hidden>{navLabelDisplay(label)}</span>
+                </>
+              ) : (
+                label
+              )}
             </Link>
           ))}
         </nav>
@@ -121,12 +144,21 @@ export default function SiteHeader() {
               <Link
                 key={href}
                 href={href}
-                className={`font-cormorant-sc w-full max-w-xs border-b py-4 text-center text-[17px] hover:opacity-80 ${
-                  isHome ? "border-white/20" : "border-neutral-200"
+                className={`font-cormorant-sc w-full max-w-xs border-b py-4 text-center hover:opacity-80 sm:text-[17px] ${
+                  isHome
+                    ? "border-white/20 text-[15px] uppercase tracking-[0.12em]"
+                    : "border-neutral-200 text-[17px]"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >
-                {label}
+                {isHome ? (
+                  <>
+                    <span className="sr-only">{label}</span>
+                    <span aria-hidden>{navLabelDisplay(label)}</span>
+                  </>
+                ) : (
+                  label
+                )}
               </Link>
             ))}
           </nav>

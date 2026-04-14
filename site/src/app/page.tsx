@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { ContactSection } from "./components/ContactSection";
 import { PartnersCarousel } from "./components/PartnersCarousel";
@@ -13,6 +14,26 @@ import vigne from "./asset/vigne.png";
 
 const publicAsset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
+function ProfilsRowArrow({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 52 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden
+    >
+      <path
+        d="M2 9h40M39 4l9 5-9 5"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
@@ -31,17 +52,14 @@ export default function Home() {
             type="video/mp4"
           />
         </video>
-        <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 pb-28 pt-32 sm:px-6 sm:pb-32 sm:pt-36 md:pt-40 lg:px-8">
-          <div className="max-w-xl space-y-3 sm:space-y-4">
-            <p className="text-[11px] font-semibold tracking-[0.22em] text-neutral-100 sm:text-[13px] sm:tracking-[0.28em] md:text-[14px] md:tracking-[0.32em]">
-              BOUTIQUE D’INGÉNIERIE FINANCIÈRE
-            </p>
-            <h1 className="font-heading text-[32px] font-bold leading-tight text-white sm:text-[40px] md:text-[46px] lg:text-[52px]">
-              Structurer. Protéger. Bâtir.
+
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 pb-28 pt-32 sm:px-6 sm:pb-32 sm:pt-36 md:pt-40 lg:px-8">
+          <div className="w-full max-w-3xl space-y-4 text-left sm:space-y-5">
+            <h1 className="font-cormorant-sc w-fit max-w-full whitespace-nowrap text-[clamp(12px,4.2vw,48px)] font-normal uppercase leading-none tracking-[0.08em] text-white sm:tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.18em]">
+              BÂTIR. STRUCTURER. PROTÉGER.
             </h1>
-            <p className="mt-2 max-w-xl text-[15px] font-medium leading-relaxed text-neutral-100 sm:mt-3 sm:text-[16px] md:text-[17px]">
-              Des décisions pensées dans la durée, au service des dirigeants,
-              familles et entrepreneurs.
+            <p className="font-cormorant-sc text-[11px] !font-bold uppercase leading-relaxed tracking-[0.26em] text-white sm:text-[12px] sm:tracking-[0.3em] md:text-[13px] md:tracking-[0.32em] lg:text-[14px]">
+              DES CONSEILS PENSÉS POUR VOUS.
             </p>
           </div>
         </div>
@@ -238,11 +256,70 @@ export default function Home() {
                 "Retraités",
               ].map((item) => (
                 <div key={item} className="border-b border-black/50 py-3 sm:py-4">
-                  <div className="font-cormorant-sc text-[26px] leading-tight sm:text-[34px] md:text-[44px] md:leading-[42px]">
-                    {"->"} {item}
+                  <div className="font-cormorant-sc flex items-center gap-3 text-[26px] leading-tight sm:gap-4 sm:text-[34px] md:text-[44px] md:leading-[42px]">
+                    <ProfilsRowArrow className="h-[0.52em] w-[1.15em] shrink-0 text-black sm:h-[0.5em] sm:w-[1.2em] md:h-[0.48em] md:w-[1.25em]" />
+                    <span>{item}</span>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bandeau — premier échange (fond crocro) */}
+      <section
+        className="relative overflow-hidden py-10 sm:py-12 lg:py-14"
+        aria-labelledby="home-premier-echange-heading"
+      >
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={crocro}
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12 lg:px-8">
+          <div className="space-y-2 text-white">
+            <div className="font-cormorant-sc text-[clamp(20px,3vw,28px)] tracking-[0.18em]">
+              TRIANON CAPITAL
+            </div>
+            <p className="font-cormorant-sc text-[9px] uppercase tracking-[0.24em] text-neutral-200 sm:text-[10px] sm:tracking-[0.28em] md:text-[11px]">
+              Boutique d’ingénierie financière
+            </p>
+          </div>
+
+          <div className="space-y-5 text-white">
+            <h2
+              id="home-premier-echange-heading"
+              className="font-cormorant-sc text-[28px] font-normal leading-tight sm:text-[34px] md:text-[40px] md:leading-[35px]"
+            >
+              Planifier un premier échange
+            </h2>
+            <div className="max-w-3xl space-y-4 font-cormorant-garamond text-[15px] leading-[1.4] text-neutral-100 sm:text-[16px] md:text-[17px]">
+              <p>
+                Nous prenons le temps de comprendre votre situation et vos
+                objectifs avant toute recommandation. Chaque décision est pensée
+                dans une perspective globale, en tenant compte de son impact dans
+                le temps et de ses interactions avec l’ensemble de votre
+                structure.
+              </p>
+              <p>
+                La relation que nous établissons est directe et durable. Nous
+                privilégions la clarté à chaque étape, pour que vous puissiez
+                prendre vos décisions en pleine connaissance de cause.
+              </p>
+            </div>
+            <div className="pt-1">
+              <Link
+                href="#contact"
+                className="inline-flex h-10 min-w-[150px] items-center justify-center bg-[#352A16] px-7 font-cormorant-sc text-[14px] font-normal uppercase tracking-wide text-white sm:h-11 sm:text-[15px] md:text-[16px]"
+              >
+                Prendre RDV
+              </Link>
             </div>
           </div>
         </div>

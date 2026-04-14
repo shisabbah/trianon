@@ -23,7 +23,7 @@ const inter = Inter({
 const cormorantSc = Cormorant_SC({
   variable: "--font-footer-title",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "700"],
 });
 
 const cormorantGaramond = Cormorant_Garamond({
@@ -35,7 +35,7 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Trianon Capital — Boutique d’ingénierie financière",
   description:
-    "Structurer, protéger, bâtir : Trianon Capital accompagne dirigeants et familles dans leurs décisions financières de long terme.",
+    "Bâtir, structurer, protéger : Trianon Capital, boutique d’ingénierie financière — des conseils pensés pour vous.",
 };
 
 export const viewport = {

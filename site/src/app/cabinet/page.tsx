@@ -176,7 +176,7 @@ export default function CabinetPage() {
             </div>
             <button
               type="button"
-              className="h-[38px] min-w-[150px] bg-[#c8b597] px-7 font-cormorant-sc text-[16px] uppercase tracking-wide text-white"
+              className="h-[38px] min-w-[150px] bg-[#352A16] px-7 font-cormorant-sc text-[16px] uppercase tracking-wide text-white"
             >
               Prendre RDV
             </button>

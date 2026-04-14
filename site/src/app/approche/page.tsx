@@ -242,7 +242,7 @@ export default function ApprochePage() {
             <div className="pt-1">
               <Link
                 href="#contact"
-                className="inline-flex h-[40px] min-w-[150px] items-center justify-center bg-[#e8dcc8] px-7 font-cormorant-sc text-[15px] font-normal uppercase tracking-wide text-[#2a1810] sm:text-[16px]"
+                className="inline-flex h-[40px] min-w-[150px] items-center justify-center bg-[#352A16] px-7 font-cormorant-sc text-[15px] font-normal uppercase tracking-wide text-white sm:text-[16px]"
               >
                 Prendre RDV
               </Link>
