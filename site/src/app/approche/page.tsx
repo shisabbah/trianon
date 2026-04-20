@@ -70,6 +70,35 @@ const pillars: {
   },
 ];
 
+function PillarCard({ pillar }: { pillar: (typeof pillars)[number] }) {
+  return (
+    <article className="flex h-full min-h-0 w-full min-w-0 flex-col rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-6 py-8 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:py-9">
+      <div className="flex min-h-[8.5rem] shrink-0 flex-col items-center justify-start text-center sm:min-h-[9rem] md:min-h-[9.5rem]">
+        <h3 className="w-full font-cormorant-sc text-[20px] font-normal uppercase leading-snug tracking-[0.06em] sm:text-[22px]">
+          {pillar.title}
+        </h3>
+        <p className="mt-3 w-full font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:mt-4 sm:text-[15px]">
+          {pillar.intro}
+        </p>
+      </div>
+      <ul className="mt-5 flex min-h-0 flex-1 flex-col gap-2.5 font-cormorant-garamond text-[13px] leading-relaxed text-white/95 sm:gap-3 sm:text-[14px]">
+        {pillar.bullets.map((b) => (
+          <li key={b} className="flex gap-2.5 text-left">
+            <span
+              className="mt-[0.4em] h-1 w-1 shrink-0 rounded-full bg-white"
+              aria-hidden
+            />
+            <span className="min-w-0">{b}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-6 shrink-0 border-t border-white/25 pt-4 text-center font-cormorant-garamond text-[12px] leading-snug text-white/90 sm:text-[13px]">
+        {pillar.footer}
+      </p>
+    </article>
+  );
+}
+
 export default function ApprochePage() {
   return (
     <main className="bg-white pt-36 text-neutral-900 sm:pt-40 md:pt-44">
@@ -139,7 +168,7 @@ export default function ApprochePage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="font-cormorant-sc text-[clamp(26px,4vw,40px)] font-normal uppercase leading-tight tracking-wide text-black drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               Une méthode structurée en 5 piliers
@@ -152,55 +181,15 @@ export default function ApprochePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-7 sm:gap-8 md:grid-cols-3">
+          <div className="mt-12 grid w-full grid-cols-1 gap-8 md:grid-cols-3 md:items-stretch md:gap-6 lg:gap-8">
             {pillars.slice(0, 3).map((p) => (
-              <article
-                key={p.title}
-                className="flex min-h-[420px] w-full max-w-[340px] flex-col justify-between rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-5 py-8 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:min-h-[440px] sm:px-6 sm:py-9 md:mx-auto"
-              >
-                <div>
-                  <h3 className="text-center font-cormorant-sc text-[20px] font-normal uppercase leading-snug tracking-[0.06em] sm:text-[22px]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-4 text-center font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:text-[15px]">
-                    {p.intro}
-                  </p>
-                  <ul className="mt-4 list-disc space-y-1.5 pl-5 text-left font-cormorant-garamond text-[13px] leading-relaxed text-white/95 sm:text-[14px]">
-                    {p.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                </div>
-                <p className="mt-6 border-t border-white/25 pt-4 text-center font-cormorant-garamond text-[12px] leading-snug text-white/90 sm:text-[13px]">
-                  {p.footer}
-                </p>
-              </article>
+              <PillarCard key={p.title} pillar={p} />
             ))}
           </div>
 
-          <div className="mx-auto mt-7 flex max-w-5xl flex-col flex-wrap items-center justify-center gap-7 sm:mt-8 md:flex-row md:gap-8">
+          <div className="mt-8 grid w-full grid-cols-1 gap-8 sm:mt-10 md:grid-cols-2 md:items-stretch md:gap-6 lg:gap-8">
             {pillars.slice(3, 5).map((p) => (
-              <article
-                key={p.title}
-                className="flex min-h-[400px] w-full max-w-[340px] flex-col justify-between rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-5 py-8 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:min-h-[420px] sm:px-6 sm:py-9"
-              >
-                <div>
-                  <h3 className="text-center font-cormorant-sc text-[20px] font-normal uppercase leading-snug tracking-[0.06em] sm:text-[22px]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-4 text-center font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:text-[15px]">
-                    {p.intro}
-                  </p>
-                  <ul className="mt-4 list-disc space-y-1.5 pl-5 text-left font-cormorant-garamond text-[13px] leading-relaxed text-white/95 sm:text-[14px]">
-                    {p.bullets.map((b) => (
-                      <li key={b}>{b}</li>
-                    ))}
-                  </ul>
-                </div>
-                <p className="mt-6 border-t border-white/25 pt-4 text-center font-cormorant-garamond text-[12px] leading-snug text-white/90 sm:text-[13px]">
-                  {p.footer}
-                </p>
-              </article>
+              <PillarCard key={p.title} pillar={p} />
             ))}
           </div>
         </div>

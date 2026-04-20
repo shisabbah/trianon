@@ -15,26 +15,6 @@ import vigne from "./asset/vigne.png";
 const publicAsset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
-function ProfilsRowArrow({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 52 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden
-    >
-      <path
-        d="M2 9h40M39 4l9 5-9 5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function Home() {
   return (
     <main className="bg-white text-neutral-900">
@@ -111,12 +91,6 @@ export default function Home() {
                   patrimoine.
                 </p>
               </div>
-              <button
-                type="button"
-                className="h-[38px] min-w-[142px] bg-[linear-gradient(180deg,#B9A889_0%,rgba(73.16,43.9,0,0.59)_100%)] px-8 font-cormorant-sc text-[16px] uppercase tracking-wide text-neutral-900 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]"
-              >
-                En savoir plus
-              </button>
             </div>
           </div>
         </div>
@@ -256,9 +230,8 @@ export default function Home() {
                 "Retraités",
               ].map((item) => (
                 <div key={item} className="border-b border-black/50 py-3 sm:py-4">
-                  <div className="font-cormorant-sc flex items-center gap-3 text-[26px] leading-tight sm:gap-4 sm:text-[34px] md:text-[44px] md:leading-[42px]">
-                    <ProfilsRowArrow className="h-[0.52em] w-[1.15em] shrink-0 text-black sm:h-[0.5em] sm:w-[1.2em] md:h-[0.48em] md:w-[1.25em]" />
-                    <span>{item}</span>
+                  <div className="font-cormorant-sc text-[26px] leading-tight sm:text-[34px] md:text-[44px] md:leading-[42px]">
+                    {item}
                   </div>
                 </div>
               ))}
