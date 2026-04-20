@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { ContactSection } from "../components/ContactSection";
 import profilLiberales from "../asset/business-woman-using-phone-office-staying-late-by-night 3.png";
-import profilRetraite from "../asset/couple-having-date-together-luxurious-restaurant 3.png";
+import profilRetraite from "../asset/young-couple.png";
 import profilSportifHautNiveau from "../asset/handsome-young-male-athlete-sports-clothing-stretching-legs-before-jogging-seaside 3.png";
 import profilCadresHighTech from "../asset/person-is-using-computer-explaining-building-construction-others-background 3.png";
 import profilImmoTerrace from "../asset/man-business-people-standing-modern-terrace-looking-view 3.png";

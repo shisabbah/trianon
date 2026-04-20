@@ -72,29 +72,37 @@ const pillars: {
 
 function PillarCard({ pillar }: { pillar: (typeof pillars)[number] }) {
   return (
-    <article className="flex h-full min-h-0 w-full min-w-0 flex-col rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-6 py-8 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:py-9">
-      <div className="flex min-h-[8.5rem] shrink-0 flex-col items-center justify-start text-center sm:min-h-[9rem] md:min-h-[9.5rem]">
-        <h3 className="w-full font-cormorant-sc text-[20px] font-normal uppercase leading-snug tracking-[0.06em] sm:text-[22px]">
+    <article className="flex h-full min-h-0 w-full flex-col gap-y-1 rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-5 pb-6 pt-6 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:px-6 sm:pb-7 sm:pt-7">
+      {/* flex + pied en mt-auto : trait horizontal aligné entre cartes ; min-h du pied évite le décalage quand le texte est court (ex. Performance pilotée). */}
+      <header className="w-full shrink-0 text-left">
+        <h3 className="min-h-[4rem] w-full text-balance font-cormorant-sc text-[20px] font-normal uppercase leading-[1.15] tracking-[0.06em] sm:min-h-[4.25rem] sm:text-[22px]">
           {pillar.title}
         </h3>
-        <p className="mt-3 w-full font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:mt-4 sm:text-[15px]">
+        <p className="mt-1 w-full pl-6 font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:pl-[26px] sm:text-[15px]">
           {pillar.intro}
         </p>
-      </div>
-      <ul className="mt-5 flex min-h-0 flex-1 flex-col gap-2.5 font-cormorant-garamond text-[13px] leading-relaxed text-white/95 sm:gap-3 sm:text-[14px]">
+      </header>
+
+      <ul className="min-h-0 w-full flex-1 list-none space-y-1.5 pl-2.5 font-cormorant-garamond text-[13px] leading-snug text-white/95 sm:space-y-2 sm:pl-3 sm:text-[14px]">
         {pillar.bullets.map((b) => (
           <li key={b} className="flex gap-2.5 text-left">
             <span
-              className="mt-[0.4em] h-1 w-1 shrink-0 rounded-full bg-white"
+              className="mt-[0.4em] inline-block h-1 w-1 shrink-0 rounded-full bg-white"
               aria-hidden
             />
-            <span className="min-w-0">{b}</span>
+            <span className="min-w-0 flex-1">{b}</span>
           </li>
         ))}
       </ul>
-      <p className="mt-6 shrink-0 border-t border-white/25 pt-4 text-center font-cormorant-garamond text-[12px] leading-snug text-white/90 sm:text-[13px]">
-        {pillar.footer}
-      </p>
+
+      <footer className="mt-auto flex w-full shrink-0 flex-col">
+        <div className="h-5 shrink-0 sm:h-6" aria-hidden />
+        <div className="flex min-h-[3.75rem] w-full flex-col justify-center border-t border-white/20 pt-3.5 sm:min-h-[4rem] sm:pt-4">
+          <p className="text-left font-cormorant-garamond text-[12px] leading-snug text-white/90 sm:text-[13px]">
+            {pillar.footer}
+          </p>
+        </div>
+      </footer>
     </article>
   );
 }
@@ -181,16 +189,19 @@ export default function ApprochePage() {
             </p>
           </div>
 
-          <div className="mt-12 grid w-full grid-cols-1 gap-8 md:grid-cols-3 md:items-stretch md:gap-6 lg:gap-8">
+          {/* Une seule grille 6 colonnes : rangée 1 = 3×(span 2), rangée 2 = 2 cartes centrées même largeur qu’au-dessus. */}
+          <div className="mt-12 grid w-full grid-cols-1 gap-6 sm:gap-8 md:grid-cols-6 md:items-stretch md:gap-x-5 md:gap-y-7 lg:gap-x-7 lg:gap-y-8">
             {pillars.slice(0, 3).map((p) => (
-              <PillarCard key={p.title} pillar={p} />
+              <div key={p.title} className="h-full min-h-0 min-w-0 md:col-span-2">
+                <PillarCard pillar={p} />
+              </div>
             ))}
-          </div>
-
-          <div className="mt-8 grid w-full grid-cols-1 gap-8 sm:mt-10 md:grid-cols-2 md:items-stretch md:gap-6 lg:gap-8">
-            {pillars.slice(3, 5).map((p) => (
-              <PillarCard key={p.title} pillar={p} />
-            ))}
+            <div className="h-full min-h-0 min-w-0 md:col-span-2 md:col-start-2">
+              <PillarCard pillar={pillars[3]} />
+            </div>
+            <div className="h-full min-h-0 min-w-0 md:col-span-2 md:col-start-4">
+              <PillarCard pillar={pillars[4]} />
+            </div>
           </div>
         </div>
       </section>
