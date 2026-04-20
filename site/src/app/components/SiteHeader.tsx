@@ -1,8 +1,19 @@
 "use client";
 
+import { Cormorant_Garamond, Cormorant_SC } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+
+const cormorantSc = Cormorant_SC({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 const navItems = [
   { href: "/", label: "Accueil" },
@@ -80,29 +91,23 @@ export default function SiteHeader() {
           )}
         </button>
 
-        <button
-          type="button"
-          className={`font-cormorant-garamond pointer-events-auto absolute right-2 top-5 z-[60] flex items-center gap-1 text-[11px] sm:right-3 sm:text-[12px] ${textClass}`}
-        >
-          <span>Français</span>
-          <span className="text-[10px] leading-none">v</span>
-        </button>
-
         <div
-          className={`mx-auto max-w-[min(100%,280px)] px-12 text-center sm:max-w-none sm:px-14 md:px-0 ${textClass}`}
+          className={`mx-auto max-w-[min(100%,280px)] pl-14 pr-6 text-center sm:max-w-none sm:px-6 md:px-0 ${textClass}`}
         >
-          <div className="font-cormorant-sc text-[13px] tracking-[0.3em] text-white sm:text-[15px] sm:tracking-[0.35em] md:text-[16px]">
+          <div
+            className={`${cormorantSc.className} text-[13px] font-normal tracking-[0.3em] sm:text-[15px] sm:tracking-[0.35em] md:text-[16px] ${textClass}`}
+          >
             TRIANON CAPITAL
           </div>
           <div
-            className={`font-cormorant-sc mt-1.5 text-[9px] uppercase tracking-[0.26em] sm:text-[10px] sm:tracking-[0.3em] md:text-[11px] md:tracking-[0.32em] ${subTextClass}`}
+            className={`${cormorantGaramond.className} mt-1.5 text-[9px] font-normal uppercase tracking-[0.26em] sm:text-[10px] sm:tracking-[0.3em] md:text-[11px] md:tracking-[0.32em] ${subTextClass}`}
           >
             BOUTIQUE D’INGÉNIERIE FINANCIÈRE
           </div>
         </div>
 
         <nav
-          className={`pointer-events-auto mt-7 hidden flex-wrap justify-center gap-y-2 md:flex ${textClass} ${
+          className={`${cormorantSc.className} pointer-events-auto mt-7 hidden flex-wrap justify-center gap-y-2 font-normal md:flex ${textClass} ${
             isHome
               ? "gap-x-10 text-[13px] uppercase tracking-[0.14em] lg:gap-x-14 lg:text-[14px] lg:tracking-[0.16em]"
               : "gap-x-8 text-[15px] lg:gap-x-12 lg:text-[16px]"
@@ -113,7 +118,7 @@ export default function SiteHeader() {
             <Link
               key={href}
               href={href}
-              className={`font-cormorant-sc hover:opacity-85 ${textClass}`}
+              className={`hover:opacity-85 ${textClass}`}
             >
               {isHome ? (
                 <>
@@ -144,7 +149,7 @@ export default function SiteHeader() {
               <Link
                 key={href}
                 href={href}
-                className={`font-cormorant-sc w-full max-w-xs border-b py-4 text-center hover:opacity-80 sm:text-[17px] ${
+                className={`${cormorantSc.className} w-full max-w-xs border-b py-4 text-center font-normal hover:opacity-80 sm:text-[17px] ${
                   isHome
                     ? "border-white/20 text-[15px] uppercase tracking-[0.12em]"
                     : "border-neutral-200 text-[17px]"

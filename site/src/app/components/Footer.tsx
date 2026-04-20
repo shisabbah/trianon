@@ -1,7 +1,18 @@
+import { Cormorant_Garamond, Cormorant_SC } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
 import fondFooter from "../asset/fond-footer.png";
+
+const cormorantSc = Cormorant_SC({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 function FacebookIcon() {
   return (
@@ -61,20 +72,28 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
         <div className="text-center">
-          <div className="text-[12px] tracking-[0.28em] text-neutral-100 sm:text-[14px] sm:tracking-[0.35em]">
+          <div
+            className={`${cormorantSc.className} text-[17px] font-bold tracking-[0.26em] text-neutral-100 sm:text-[21px] sm:tracking-[0.3em] md:text-[26px] md:tracking-[0.32em]`}
+          >
             TRIANON CAPITAL
           </div>
-          <div className="mt-2 text-[10px] uppercase tracking-[0.28em] text-neutral-300 sm:text-[12px] sm:tracking-[0.35em]">
-            BOUTIQUE D’INGENIERIE FINANCIERE
+          <div
+            className={`${cormorantGaramond.className} mt-2 text-[10px] font-normal uppercase tracking-[0.28em] text-neutral-300 sm:text-[12px] sm:tracking-[0.35em]`}
+          >
+            BOUTIQUE D’INGÉNIERIE FINANCIÈRE
           </div>
         </div>
 
         <div className="mx-auto mt-10 grid gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div className="space-y-4">
-            <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
+            <div
+              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+            >
               À propos
             </div>
-            <p className="font-footer-body text-[16px] leading-[16px] text-white">
+            <p
+              className={`${cormorantGaramond.className} text-[16px] font-normal leading-relaxed text-white`}
+            >
               Trianon Capital accompagne des situations patrimoniales et
               financières complexes avec une approche indépendante, globale et
               durable.
@@ -82,13 +101,15 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
+            <div
+              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+            >
               Liens rapides
             </div>
             <ul className="space-y-3 text-[15px] sm:text-[16px]">
               <li>
                 <Link
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="/"
                 >
                   Accueil
@@ -96,7 +117,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="/cabinet"
                 >
                   Le cabinet
@@ -104,7 +125,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="/profils"
                 >
                   Profils
@@ -112,7 +133,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="/approche"
                 >
                   Approche
@@ -120,7 +141,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="/contact"
                 >
                   Contact
@@ -130,29 +151,38 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
+            <div
+              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+            >
               Contact
             </div>
             <ul className="space-y-3 text-[16px]">
               <li>
-                <a className="font-footer-title hover:text-white" href="tel:+33100000000">
+                <a
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
+                  href="tel:+33100000000"
+                >
                   +33 1 XX XX XX XX
                 </a>
               </li>
               <li>
                 <a
-                  className="font-footer-title hover:text-white"
+                  className={`${cormorantSc.className} text-white hover:opacity-90`}
                   href="mailto:contact@trianon-capital.fr"
                 >
                   contact@trianoncapital.fr
                 </a>
               </li>
-              <li className="font-footer-title text-white">26 rue XXX, Paris</li>
+              <li className={`${cormorantSc.className} text-white`}>
+                26 rue XXX, Paris
+              </li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <div className="font-footer-title text-[25px] leading-[35px] font-normal text-white">
+            <div
+              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+            >
               Suivez-nous
             </div>
             <div className="flex flex-wrap gap-3">
@@ -171,7 +201,9 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-neutral-200/30 pt-6 text-center sm:mt-12">
-          <div className="font-footer-title mx-auto max-w-4xl text-[12px] leading-snug sm:text-[14px] md:text-[16px] md:leading-[1.35]">
+          <div
+            className={`${cormorantGaramond.className} mx-auto max-w-4xl text-[12px] font-normal leading-snug text-white/90 sm:text-[14px] md:text-[16px] md:leading-[1.35]`}
+          >
             2026 © Tous droits réservés par Trianon Capital — Mentions légales —
             Politique de confidentialité
           </div>

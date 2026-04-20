@@ -53,6 +53,12 @@ export default function Home() {
           />
         </video>
 
+        {/* Voile noir clair : lisibilité du texte sans masquer la vidéo */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[1] bg-black/28"
+          aria-hidden
+        />
+
         <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 pb-28 pt-32 sm:px-6 sm:pb-32 sm:pt-36 md:pt-40 lg:px-8">
           <div className="w-full max-w-3xl space-y-4 text-left sm:space-y-5">
             <h1 className="font-cormorant-sc w-fit max-w-full whitespace-nowrap text-[clamp(12px,4.2vw,48px)] font-normal uppercase leading-none tracking-[0.08em] text-white sm:tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.18em]">
@@ -133,69 +139,63 @@ export default function Home() {
             patrimoine à chaque étape de votre vie.
           </p>
 
-          <div className="mt-8 grid min-h-0 gap-6 sm:mt-10 sm:gap-8 md:min-h-[376px] md:grid-cols-3 md:items-stretch">
-            <div className="relative flex min-h-[280px] w-full flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:min-h-[320px] md:min-h-[376px]">
+          <div className="mt-8 grid min-h-0 gap-6 sm:mt-10 sm:gap-8 md:grid-cols-3 md:items-stretch md:gap-8">
+            {(
+              [
+                {
+                  title: "Gestion d’actifs",
+                  items: [
+                    "Structuration et diversification du patrimoine",
+                    "Optimisation des placements financiers et immobiliers",
+                    "Stratégies d’investissement à moyen et long terme",
+                  ],
+                },
+                {
+                  title: "Financement",
+                  items: [
+                    "Analyse des solutions de financement disponibles",
+                    "Optimisation de l’effet de levier",
+                    "Structuration de projets immobiliers et professionnels",
+                  ],
+                },
+                {
+                  title: "Assurantiel",
+                  items: [
+                    "Protection du patrimoine et de la famille",
+                    "Prévoyance et sécurisation des revenus",
+                    "Anticipation et gestion des risques de la vie",
+                  ],
+                },
+              ] as const
+            ).map((card) => (
               <div
-                aria-hidden
-                className="absolute inset-0 opacity-80 bg-[linear-gradient(180deg,#B9A889_0%,rgba(73.16,43.9,0,0.59)_100%)]"
-              />
-              <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-start px-5 py-8 sm:px-8 sm:py-10">
-                <h3 className="font-cormorant-sc text-center text-[32px] font-normal leading-tight text-white sm:text-[38px] md:text-[46px] md:leading-[40px]">
-                  Gestion d’actifs
-                </h3>
-                <div className="mt-8 font-cormorant-garamond text-left text-[16px] leading-[18px] text-white">
-                  • Structuration et diversification du patrimoine
-                  <br />
-                  <br />
-                  • Optimisation des placements financiers et immobiliers
-                  <br />
-                  <br />
-                  • Stratégies d’investissement à moyen et long terme
+                key={card.title}
+                className="relative flex min-h-[280px] w-full flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:min-h-[320px] md:min-h-[376px]"
+              >
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-80 bg-[linear-gradient(180deg,#B9A889_0%,rgba(73.16,43.9,0,0.59)_100%)]"
+                />
+                <div className="relative z-10 flex h-full min-h-0 w-full flex-1 flex-col px-5 py-8 sm:px-8 sm:py-10">
+                  {/* Hauteur fixe pour aligner les titres (2 lignes max) puis les listes au même niveau */}
+                  <div className="flex min-h-[4.75rem] w-full flex-col items-center justify-start sm:min-h-[5.5rem] md:min-h-[5.5rem]">
+                    <h3 className="w-full text-center font-cormorant-sc text-[32px] font-normal leading-[1.15] text-white sm:text-[38px] sm:leading-[1.12] md:text-[46px] md:leading-[40px]">
+                      {card.title}
+                    </h3>
+                  </div>
+                  <ul className="mt-8 w-full list-none space-y-4 font-cormorant-garamond text-left text-[16px] leading-snug text-white">
+                    {card.items.map((line) => (
+                      <li key={line} className="flex gap-2">
+                        <span className="shrink-0 select-none" aria-hidden>
+                          •
+                        </span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            </div>
-
-            <div className="relative flex min-h-[280px] w-full flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:min-h-[320px] md:min-h-[376px]">
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-80 bg-[linear-gradient(180deg,#B9A889_0%,rgba(73.16,43.9,0,0.59)_100%)]"
-              />
-              <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-start px-5 py-8 sm:px-8 sm:py-10">
-                <h3 className="font-cormorant-sc text-center text-[32px] font-normal leading-tight text-white sm:text-[38px] md:text-[46px] md:leading-[40px]">
-                  Financement
-                </h3>
-                <div className="mt-8 font-cormorant-garamond text-left text-[16px] leading-[18px] text-white">
-                  • Analyse des solutions de financement disponibles
-                  <br />
-                  <br />
-                  • Optimisation de l’effet de levier
-                  <br />
-                  <br />
-                  • Structuration de projets immobiliers et professionnels
-                </div>
-              </div>
-            </div>
-
-            <div className="relative flex min-h-[280px] w-full flex-col overflow-hidden rounded-[8px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:min-h-[320px] md:min-h-[376px]">
-              <div
-                aria-hidden
-                className="absolute inset-0 opacity-80 bg-[linear-gradient(180deg,#B9A889_0%,rgba(73.16,43.9,0,0.59)_100%)]"
-              />
-              <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-start px-5 py-8 sm:px-8 sm:py-10">
-                <h3 className="font-cormorant-sc text-center text-[32px] font-normal leading-tight text-white sm:text-[38px] md:text-[46px] md:leading-[40px]">
-                  Assurantiel
-                </h3>
-                <div className="mt-8 font-cormorant-garamond text-left text-[16px] leading-[18px] text-white">
-                  • Protection du patrimoine et de la famille
-                  <br />
-                  <br />
-                  • Prévoyance et sécurisation des revenus
-                  <br />
-                  <br />
-                  • Anticipation et gestion des risques de la vie
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
