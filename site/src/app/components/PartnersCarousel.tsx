@@ -13,7 +13,8 @@ import louvreLogo from "../asset/louvrebanqueprive.png";
 import societeLogo from "../asset/societe-generale-2.png";
 import swisslifeLogo from "../asset/swisslife.png";
 
-const PER_SLIDE = 3;
+/** 4 logos par vue → 9 partenaires = 3 temps / 3 slides */
+const PER_SLIDE = 4;
 
 type LogoItem = { src: StaticImageData; alt: string };
 
@@ -50,6 +51,10 @@ export function PartnersCarousel() {
   }, [slides.length]);
 
   const current = slides[slideIndex] ?? [];
+  const slots: (LogoItem | null)[] = [
+    ...current,
+    ...Array.from({ length: Math.max(0, PER_SLIDE - current.length) }, () => null),
+  ];
 
   return (
     <>
@@ -63,17 +68,22 @@ export function PartnersCarousel() {
           ‹
         </button>
 
-        <div className="flex min-h-[68px] min-w-0 flex-1 items-center justify-center gap-1.5 sm:min-h-[76px] sm:gap-2 md:min-h-[84px] md:gap-4">
-          {current.map((logo) => (
+        <div className="flex min-h-[68px] min-w-0 flex-1 items-center justify-center gap-1 sm:min-h-[76px] sm:gap-1.5 md:min-h-[84px] md:gap-2 lg:gap-3">
+          {slots.map((logo, i) => (
             <div
-              key={`${slideIndex}-${logo.alt}`}
-              className="flex h-16 w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center rounded-[6px] bg-white/90 p-1.5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[72px] sm:rounded-[8px] sm:p-2 md:h-[84px] md:w-[238px] md:max-w-none md:flex-none md:p-4"
+              key={logo ? `${slideIndex}-${logo.alt}` : `${slideIndex}-empty-${i}`}
+              className="flex h-16 w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center rounded-[6px] bg-white/90 p-1.5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[72px] sm:rounded-[8px] sm:p-2 md:h-[80px] md:max-w-[25%] md:flex-[1_1_0] md:p-3"
+              aria-hidden={logo ? undefined : true}
             >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                className="h-auto w-auto max-h-9 max-w-full object-contain sm:max-h-11 md:max-h-[56px] md:max-w-[198px]"
-              />
+              {logo ? (
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-auto w-auto max-h-9 max-w-full object-contain blur-[2px] sm:max-h-10 sm:blur-[2.5px] md:max-h-[52px] md:max-w-full md:blur-[3px]"
+                />
+              ) : (
+                <span className="block min-h-[28px] min-w-[28px] rounded-sm border border-white/35 bg-white/25 sm:min-h-[32px] sm:min-w-[32px] md:min-h-[40px] md:min-w-[40px]" />
+              )}
             </div>
           ))}
         </div>
