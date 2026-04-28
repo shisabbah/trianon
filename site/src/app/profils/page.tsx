@@ -22,7 +22,7 @@ const profiles: {
     image: profilImmoTerrace,
   },
   {
-    title: "Retraite & revenus futurs",
+    title: "Retraités & revenus futurs",
     description:
       "Anticiper la baisse de revenus et construire une stratégie pour sécuriser votre avenir et générer des revenus durables, afin de préserver votre indépendance financière.",
     image: profilRetraite,

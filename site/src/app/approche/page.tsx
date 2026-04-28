@@ -74,11 +74,11 @@ function PillarCard({ pillar }: { pillar: (typeof pillars)[number] }) {
   return (
     <article className="flex h-full min-h-0 w-full flex-col gap-y-1 rounded-[8px] bg-gradient-to-b from-[#B9A889] to-[rgba(73,44,0,0.59)] px-5 pb-6 pt-6 text-white shadow-[0px_4px_14px_rgba(0,0,0,0.14)] sm:px-6 sm:pb-7 sm:pt-7">
       {/* flex + pied en mt-auto : trait horizontal aligné entre cartes ; min-h du pied évite le décalage quand le texte est court (ex. Performance pilotée). */}
-      <header className="w-full shrink-0 text-left">
-        <h3 className="min-h-[4rem] w-full text-balance font-cormorant-sc text-[20px] font-normal uppercase leading-[1.15] tracking-[0.06em] sm:min-h-[4.25rem] sm:text-[22px]">
+      <header className="w-full shrink-0">
+        <h3 className="min-h-[4rem] w-full text-center text-balance font-cormorant-sc text-[20px] font-normal uppercase leading-[1.15] tracking-[0.06em] sm:min-h-[4.25rem] sm:text-[22px]">
           {pillar.title}
         </h3>
-        <p className="mt-1 w-full pl-6 font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:pl-[26px] sm:text-[15px]">
+        <p className="mt-1 w-full pl-6 text-left font-cormorant-garamond text-[14px] leading-snug text-white/95 sm:pl-[26px] sm:text-[15px]">
           {pillar.intro}
         </p>
       </header>
@@ -222,7 +222,7 @@ export default function ApprochePage() {
           </div>
 
           <div className="space-y-5 text-white">
-            <h2 className="font-cormorant-sc text-[clamp(32px,5vw,46px)] leading-none">
+            <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(18px,4.8vw,46px)] leading-none">
               Planifier un premier échange
             </h2>
             <div className="max-w-3xl space-y-4 font-cormorant-garamond text-[16px] leading-[1.35] text-neutral-100 sm:text-[17px]">
@@ -265,10 +265,14 @@ export default function ApprochePage() {
 
         <div className="relative z-10 mx-auto flex min-h-[min(88vh,860px)] w-full max-w-[1600px] items-center justify-start px-6 py-16 sm:px-10 sm:py-20 lg:px-14 lg:py-20 xl:px-20 2xl:pl-24">
           <div className="w-full max-w-[min(100%,620px)] text-left text-white">
-            <h2 className="font-cormorant-sc text-[clamp(24px,5.2vw,46px)] font-normal uppercase leading-[1.12] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)] text-balance">
-              Une approche exigeante, sans
-              <br />
-              logique commerciale
+            <h2 className="font-cormorant-sc text-[clamp(20px,5vw,46px)] font-normal uppercase leading-[1.1] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
+              {/* whitespace-nowrap par ligne : exactement 2 lignes */}
+              <span className="block whitespace-nowrap">
+                Une approche exigeante,
+              </span>
+              <span className="block whitespace-nowrap">
+                sans logique commerciale
+              </span>
             </h2>
             <div className="mt-9 space-y-6 font-cormorant-garamond text-[17px] leading-[1.55] text-white/95 sm:mt-10 sm:text-[18px] sm:leading-[1.5]">
               <p className="drop-shadow-[0_1px_10px_rgba(0,0,0,0.55)]">

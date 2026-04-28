@@ -117,7 +117,7 @@ export default function Home() {
             {(
               [
                 {
-                  title: "Gestion d’actifs",
+                  title: "Gestion\u00A0d’actifs",
                   items: [
                     "Structuration et diversification du patrimoine",
                     "Optimisation des placements financiers et immobiliers",
@@ -153,11 +153,17 @@ export default function Home() {
                 <div className="relative z-10 flex h-full min-h-0 w-full flex-1 flex-col px-5 py-8 sm:px-8 sm:py-10">
                   {/* Hauteur fixe pour aligner les titres (2 lignes max) puis les listes au même niveau */}
                   <div className="flex min-h-[4.75rem] w-full flex-col items-center justify-start sm:min-h-[5.5rem] md:min-h-[5.5rem]">
-                    <h3 className="w-full text-center font-cormorant-sc text-[32px] font-normal leading-[1.15] text-white sm:text-[38px] sm:leading-[1.12] md:text-[46px] md:leading-[40px]">
+                    <h3
+                      className={`w-full text-center font-cormorant-sc text-[32px] font-normal leading-[1.15] text-white sm:text-[38px] sm:leading-[1.12] md:text-[46px] md:leading-[40px] ${
+                        card.title.startsWith("Gestion")
+                          ? "whitespace-nowrap"
+                          : ""
+                      }`}
+                    >
                       {card.title}
                     </h3>
                   </div>
-                  <ul className="mt-8 w-full list-none space-y-4 font-cormorant-garamond text-left text-[16px] leading-snug text-white">
+                  <ul className="mt-5 w-full list-none space-y-3 font-cormorant-garamond text-left text-[16px] leading-snug text-white sm:mt-6 sm:space-y-3.5">
                     {card.items.map((line) => (
                       <li key={line} className="flex gap-2">
                         <span className="shrink-0 select-none" aria-hidden>
@@ -204,7 +210,7 @@ export default function Home() {
 
           <div className="relative z-10 grid min-h-0 gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-12 md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-12 lg:px-20">
             <div className="max-w-[420px] text-black">
-              <h2 className="font-cormorant-sc text-[36px] leading-tight sm:text-[44px] md:text-[52px] md:leading-[42px]">
+              <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(22px,5vw,52px)] leading-tight md:leading-[42px]">
                 Profils accompagnés
               </h2>
               <p className="mt-3 font-cormorant-sc text-[20px] leading-snug sm:text-[24px] md:text-[28px] md:leading-[30px]">
@@ -268,7 +274,7 @@ export default function Home() {
           <div className="space-y-5 text-white">
             <h2
               id="home-premier-echange-heading"
-              className="font-cormorant-sc text-[28px] font-normal leading-tight sm:text-[34px] md:text-[40px] md:leading-[35px]"
+              className="font-cormorant-sc whitespace-nowrap text-[clamp(17px,4.2vw,40px)] font-normal leading-tight md:leading-[35px]"
             >
               Planifier un premier échange
             </h2>

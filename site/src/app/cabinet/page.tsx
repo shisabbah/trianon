@@ -151,14 +151,16 @@ export default function CabinetPage() {
 
         <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
           <div className="space-y-2 text-white">
-            <div className="text-[30px] tracking-[0.18em]">TRIANON CAPITAL</div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-neutral-200">
-              Boutique d’ingénierie financière
+            <div className="font-cormorant-sc text-[clamp(20px,3vw,28px)] tracking-[0.18em]">
+              TRIANON CAPITAL
             </div>
+            <p className="font-cormorant-sc text-[9px] uppercase tracking-[0.24em] text-neutral-200 sm:text-[10px] sm:tracking-[0.28em] md:text-[11px]">
+              Boutique d’ingénierie financière
+            </p>
           </div>
 
           <div className="space-y-5 text-white">
-            <h2 className="font-cormorant-sc text-[clamp(28px,6vw,46px)] leading-tight md:leading-none">
+            <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(17px,5vw,46px)] leading-tight md:leading-none">
               Planifier un premier échange
             </h2>
             <div className="max-w-3xl space-y-3 font-cormorant-garamond text-[17px] leading-[1.3] text-neutral-100">
