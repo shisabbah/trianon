@@ -79,7 +79,7 @@ export function PartnersCarousel() {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-auto w-auto max-h-9 max-w-full object-contain blur-[2px] sm:max-h-10 sm:blur-[2.5px] md:max-h-[52px] md:max-w-full md:blur-[3px]"
+                  className="h-auto w-auto max-h-9 max-w-full object-contain sm:max-h-10 md:max-h-[52px] md:max-w-full"
                 />
               ) : (
                 <span className="block min-h-[28px] min-w-[28px] rounded-sm border border-white/35 bg-white/25 sm:min-h-[32px] sm:min-w-[32px] md:min-h-[40px] md:min-w-[40px]" />
