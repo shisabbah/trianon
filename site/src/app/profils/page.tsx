@@ -9,6 +9,7 @@ import profilCadresHighTech from "../asset/person-is-using-computer-explaining-b
 import profilImmoTerrace from "../asset/man-business-people-standing-modern-terrace-looking-view 3.png";
 import profilIndepEntrepreneur from "../asset/good-looking-businessman-walking-hall-hotel-having-phone-call 3.png";
 import champLavande from "../asset/champ.png";
+import vagueCintre from "../asset/vague-cintre.png";
 
 const profiles: {
   title: string;
@@ -63,15 +64,28 @@ export default function ProfilsPage() {
           </h1>
           <div className="h-px w-full bg-neutral-300" />
         </div>
+      </div>
 
-        <section className="mt-14 text-left sm:mt-20 md:mt-28 lg:mt-36 xl:mt-44">
-          <div className="max-w-xl md:ml-0 lg:ml-[33%]">
-            <h2 className="font-cormorant-sc text-[28px] font-normal uppercase leading-tight tracking-wide text-black sm:text-[32px]">
+      {/* Bande vague pleine largeur, même logique que le haut de page Approche */}
+      <section className="relative min-h-[min(92svh,760px)] overflow-hidden bg-white pb-20 pt-6 sm:min-h-[760px] sm:pb-24 sm:pt-8 md:min-h-[820px] md:pb-28 md:pt-10">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
+          <Image
+            src={vagueCintre}
+            alt=""
+            fill
+            className="object-cover object-[center_bottom]"
+            priority={false}
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
+          <div className="w-full max-w-[min(100%,34rem)] sm:max-w-xl">
+            <h2 className="font-cormorant-sc text-[clamp(1.35rem,3.8vw,2rem)] font-normal uppercase leading-[1.15] tracking-wide text-black text-balance drop-shadow-[0_1px_12px_rgba(255,255,255,0.95)] sm:leading-tight">
               Des parcours uniques,
               <br />
               des accompagnements sur mesure
             </h2>
-            <div className="mt-8 space-y-4 font-cormorant-garamond text-[16px] leading-relaxed text-neutral-800">
+            <div className="mt-6 space-y-4 font-cormorant-garamond text-[15px] leading-relaxed text-neutral-800 text-pretty sm:mt-8 sm:text-[16px] [&_p]:drop-shadow-[0_1px_10px_rgba(255,255,255,0.9)]">
               <p>
                 Chaque situation patrimoniale est unique. Nous adaptons notre
                 analyse et nos recommandations à votre profil, à vos contraintes
@@ -82,7 +96,7 @@ export default function ProfilsPage() {
                 accompagnons, avec une approche globale et indépendante.
               </p>
             </div>
-            <div className="mt-10 flex justify-start">
+            <div className="mt-8 flex justify-start sm:mt-10">
               <Link
                 href="#contact"
                 className="inline-flex h-[38px] min-w-[142px] items-center justify-center bg-[#c8b597] px-8 font-cormorant-sc text-[16px] uppercase tracking-wide text-white"
@@ -91,8 +105,10 @@ export default function ProfilsPage() {
               </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <section className="mt-20">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {profiles.map((p) => (

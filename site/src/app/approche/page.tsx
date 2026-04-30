@@ -5,7 +5,7 @@ import { ContactSection } from "../components/ContactSection";
 import crocro from "../asset/crocro.png";
 import immeuble from "../asset/immeuble.png";
 import maisonVigne from "../asset/maison-vigne.png";
-import vagueCintre from "../asset/vague-cintre.png";
+import miamiLine from "../asset/miami_line 1.png";
 
 const pillars: {
   title: string;
@@ -113,7 +113,7 @@ export default function ApprochePage() {
       <section className="relative min-h-[760px] overflow-hidden bg-white pb-24 pt-8 sm:min-h-[860px] sm:pb-28 sm:pt-10">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
           <Image
-            src={vagueCintre}
+            src={miamiLine}
             alt=""
             fill
             className="object-cover object-[center_bottom]"
