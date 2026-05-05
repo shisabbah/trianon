@@ -79,11 +79,12 @@ export default function ProfilsPage() {
         </div>
 
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
-          <div className="w-full max-w-[min(100%,34rem)] sm:max-w-xl">
-            <h2 className="font-cormorant-sc text-[clamp(1.35rem,3.8vw,2rem)] font-normal uppercase leading-[1.15] tracking-wide text-black text-balance drop-shadow-[0_1px_12px_rgba(255,255,255,0.95)] sm:leading-tight">
-              Des parcours uniques,
-              <br />
-              des accompagnements sur mesure
+          <div className="w-full max-w-4xl">
+            <h2 className="font-cormorant-sc text-[clamp(1rem,3.4vw,2rem)] font-normal uppercase leading-[1.15] tracking-wide text-black drop-shadow-[0_1px_12px_rgba(255,255,255,0.95)] sm:leading-tight">
+              <span className="block">Des parcours uniques,</span>
+              <span className="block sm:whitespace-nowrap">
+                des accompagnements sur&nbsp;mesure
+              </span>
             </h2>
             <div className="mt-6 space-y-4 font-cormorant-garamond text-[15px] leading-relaxed text-neutral-800 text-pretty sm:mt-8 sm:text-[16px] [&_p]:drop-shadow-[0_1px_10px_rgba(255,255,255,0.9)]">
               <p>
@@ -109,15 +110,15 @@ export default function ProfilsPage() {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <section className="mt-20">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="mt-14 sm:mt-16">
+          <div className="grid items-stretch gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
             {profiles.map((p) => (
               <article
                 key={p.title}
-                className="flex h-full min-h-[28rem] w-full flex-col rounded-[8px] bg-white shadow-[0_4px_22px_rgba(0,0,0,0.06)] sm:min-h-[30rem] lg:min-h-[32rem]"
+                className="flex h-full min-h-0 w-full flex-col rounded-[8px] bg-white shadow-[0_4px_18px_rgba(0,0,0,0.06)]"
               >
-                <div className="shrink-0 px-4 pt-5 sm:px-5 sm:pt-6">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[3px] shadow-[0_2px_10px_rgba(0,0,0,0.11)]">
+                <div className="shrink-0 px-3 pt-3 sm:px-3.5 sm:pt-3.5">
+                  <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[3px] shadow-[0_1px_8px_rgba(0,0,0,0.08)]">
                     <Image
                       src={p.image}
                       alt=""
@@ -127,12 +128,12 @@ export default function ProfilsPage() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-1 flex-col items-center justify-center px-6 pb-8 pt-6 text-center sm:px-7 sm:pb-10 sm:pt-7">
-                  <div className="flex w-full max-w-[20.5rem] flex-col items-center gap-4 sm:max-w-[22rem]">
-                    <h3 className="font-cormorant-sc text-[17px] font-normal uppercase leading-snug tracking-[0.08em] text-black text-balance sm:text-[18px]">
+                <div className="flex min-h-[10rem] flex-1 flex-col justify-center px-4 py-6 text-center sm:min-h-[11rem] sm:px-5 sm:py-7">
+                  <div className="flex w-full max-w-[20.5rem] flex-col items-center gap-2.5 sm:mx-auto sm:max-w-[22rem] sm:gap-3">
+                    <h3 className="flex min-h-[3rem] w-full items-center justify-center font-cormorant-sc text-[16px] font-normal uppercase leading-snug tracking-[0.08em] text-black text-balance sm:min-h-[3.25rem] sm:text-[17px]">
                       {p.title}
                     </h3>
-                    <p className="font-cormorant-garamond text-[15px] leading-[1.7] text-neutral-800 text-pretty">
+                    <p className="font-cormorant-garamond text-[14px] leading-snug text-neutral-800 text-pretty sm:text-[15px] sm:leading-relaxed">
                       {p.description}
                     </p>
                   </div>
@@ -142,7 +143,7 @@ export default function ProfilsPage() {
           </div>
         </section>
 
-        <div className="mt-16 flex justify-center sm:mt-20">
+        <div className="mt-10 flex justify-center sm:mt-12">
           <Link
             href="#contact"
             className="inline-flex h-[38px] min-w-[142px] items-center justify-center bg-[#c8b597] px-8 font-cormorant-sc text-[16px] uppercase tracking-wide text-white"
