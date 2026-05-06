@@ -19,7 +19,7 @@ import swisslifeLogo from "../asset/swisslife.png";
 /** 4 logos par vue → 12 partenaires = 3 slides pleines */
 const PER_SLIDE = 4;
 
-type LogoItem = { src: StaticImageData; alt: string };
+type LogoItem = { src: StaticImageData; alt: string; scaleClass?: string };
 
 const logos: LogoItem[] = [
   { src: goldmanLogo, alt: "Goldman Sachs" },
@@ -27,7 +27,11 @@ const logos: LogoItem[] = [
   { src: louvreLogo, alt: "Louvre Banque Privée" },
   { src: societeLogo, alt: "Société Générale" },
   { src: logoLazare, alt: "Lazare Associés" },
-  { src: logoGeneraliSquare, alt: "Generali Luxembourg" },
+  {
+    src: logoGeneraliSquare,
+    alt: "Generali Luxembourg",
+    scaleClass: "scale-[1.52] sm:scale-[1.62] md:scale-[1.72]",
+  },
   { src: logoGenerali, alt: "Generali" },
   { src: swisslifeLogo, alt: "Swiss Life" },
   { src: interinvestLogo, alt: "Inter Invest" },
@@ -78,14 +82,14 @@ export function PartnersCarousel() {
           {slots.map((logo, i) => (
             <div
               key={logo ? `${slideIndex}-${logo.alt}` : `${slideIndex}-empty-${i}`}
-              className="flex h-16 w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center rounded-[6px] bg-white/90 p-1.5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[72px] sm:rounded-[8px] sm:p-2 md:h-[80px] md:max-w-[25%] md:flex-[1_1_0] md:p-3"
+              className="flex h-16 w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center overflow-visible rounded-[6px] bg-white/90 p-1.5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[72px] sm:rounded-[8px] sm:p-2 md:h-[80px] md:max-w-[25%] md:flex-[1_1_0] md:p-3"
               aria-hidden={logo ? undefined : true}
             >
               {logo ? (
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-auto w-auto max-h-9 max-w-full object-contain sm:max-h-10 md:max-h-[52px] md:max-w-full"
+                  className={`h-auto w-auto max-h-9 max-w-full origin-center object-contain sm:max-h-10 md:max-h-[52px] md:max-w-full ${logo.scaleClass ?? ""}`}
                 />
               ) : (
                 <span className="block min-h-[28px] min-w-[28px] rounded-sm border border-white/35 bg-white/25 sm:min-h-[32px] sm:min-w-[32px] md:min-h-[40px] md:min-w-[40px]" />
