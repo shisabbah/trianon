@@ -5,15 +5,18 @@ import { useCallback, useState } from "react";
 
 import edrLogo from "../asset/EDR 2.png";
 import goldmanLogo from "../asset/Goldman-Sachs-Logo 2.png";
+import citibankLogo from "../asset/Citibank_logo_PNG1.png";
+import blackstoneLogo from "../asset/Blackstone-Logo.png";
 import interinvestLogo from "../asset/interinvest.jpg";
 import logoLazare from "../asset/logo-lazare.png";
 import logoGenerali from "../asset/generali.png";
 import logoGeneraliSquare from "../asset/Logo_generali_square.png";
 import louvreLogo from "../asset/louvrebanqueprive.png";
+import nbpLogo from "../asset/NBP.F.png";
 import societeLogo from "../asset/societe-generale-2.png";
 import swisslifeLogo from "../asset/swisslife.png";
 
-/** 4 logos par vue → 9 partenaires = 3 temps / 3 slides */
+/** 4 logos par vue → 12 partenaires = 3 slides pleines */
 const PER_SLIDE = 4;
 
 type LogoItem = { src: StaticImageData; alt: string };
@@ -28,6 +31,9 @@ const logos: LogoItem[] = [
   { src: logoGenerali, alt: "Generali" },
   { src: swisslifeLogo, alt: "Swiss Life" },
   { src: interinvestLogo, alt: "Inter Invest" },
+  { src: citibankLogo, alt: "Citibank" },
+  { src: nbpLogo, alt: "NBP" },
+  { src: blackstoneLogo, alt: "Blackstone" },
 ];
 
 function chunkLogos(items: LogoItem[], size: number): LogoItem[][] {
