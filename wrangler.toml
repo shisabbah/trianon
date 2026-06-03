@@ -1,0 +1,6 @@
+# Site Next.js export statique (site/out). Build avant deploy : npm run build
+name = "trianon"
+compatibility_date = "2024-09-23"
+
+[assets]
+directory = "./site/out"

@@ -15,6 +15,10 @@ import vigne from "./asset/vigne.png";
 const publicAsset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
+const heroVideoSrc =
+  process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim() ||
+  publicAsset("/0_Villas_Hotels_3840x2160.mp4");
+
 export default function Home() {
   return (
     <main className="bg-white text-neutral-900">
@@ -28,7 +32,7 @@ export default function Home() {
           playsInline
         >
           <source
-            src={publicAsset("/0_Villas_Hotels_3840x2160.mp4")}
+            src={heroVideoSrc}
             type="video/mp4"
           />
         </video>
