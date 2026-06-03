@@ -14,18 +14,18 @@ export function ContactSection({
   return (
     <section id={id} className="bg-white py-0 text-black">
       <div className="mx-auto max-w-[1280px]">
-        <div className="px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="px-site py-[clamp(3rem,5vw+1rem,6rem)]">
           <div className="mx-auto max-w-[596px]">
-            <h2 className="text-center font-cormorant-sc text-[30px] font-normal leading-tight text-black sm:text-[36px] md:text-[40px] md:leading-[35px]">
+            <h2 className="text-center font-cormorant-sc text-[clamp(1.5rem,3.5vw+0.5rem,2.5rem)] font-normal leading-tight text-black md:leading-[1.1]">
               Contact
             </h2>
-            <p className="mt-3 text-center font-cormorant-garamond text-[14px] leading-snug text-black sm:text-[15px] md:text-[16px]">
+            <p className="mt-3 text-center font-cormorant-garamond text-[clamp(0.85rem,0.35vw+0.82rem,1rem)] leading-snug text-black">
               Un premier échange permet souvent d’y voir plus clair.
               <br />
               Toute relation commence par une conversation.
             </p>
 
-            <form className="mt-12 space-y-5">
+            <form className="mt-[clamp(2.25rem,4vw,3.25rem)] space-y-[clamp(1rem,2vw,1.35rem)]">
               <div>
                 <label
                   htmlFor={fid("name")}

@@ -109,8 +109,8 @@ function PillarCard({ pillar }: { pillar: (typeof pillars)[number] }) {
 
 export default function ApprochePage() {
   return (
-    <main className="bg-white pt-36 text-neutral-900 sm:pt-40 md:pt-44">
-      <section className="relative min-h-[760px] overflow-hidden bg-white pb-24 pt-8 sm:min-h-[860px] sm:pb-28 sm:pt-10">
+    <main className="bg-white pt-page text-neutral-900">
+      <section className="relative min-h-[clamp(28rem,55svh,54rem)] overflow-hidden bg-white pb-[clamp(4.5rem,8vw,7.5rem)] pt-[clamp(1.5rem,2vw+0.5rem,2.75rem)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
           <Image
             src={miamiLine}
@@ -121,7 +121,7 @@ export default function ApprochePage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl px-site">
           <div className="space-y-10 sm:space-y-14">
             <div className="space-y-3">
               <h1 className="font-cormorant-sc text-[32px] font-normal uppercase leading-none text-black sm:text-[38px] md:text-[44px]">
@@ -176,7 +176,7 @@ export default function ApprochePage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-site">
           <div className="text-center">
             <h2 className="font-cormorant-sc text-[clamp(26px,4vw,40px)] font-normal uppercase leading-tight tracking-wide text-black drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]">
               Une méthode structurée en 5 piliers
@@ -211,7 +211,7 @@ export default function ApprochePage() {
           <Image src={crocro} alt="" fill className="object-cover" sizes="100vw" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12 lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-site lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
           <div className="space-y-2 text-white">
             <div className="font-cormorant-sc text-[clamp(22px,3vw,30px)] tracking-[0.18em]">
               TRIANON CAPITAL

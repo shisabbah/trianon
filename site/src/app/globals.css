@@ -22,6 +22,30 @@ body {
   font-family: var(--font-body), system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   overflow-x: clip;
+  font-size: clamp(0.9375rem, 0.2vw + 0.9rem, 1rem);
+}
+
+/**
+ * Rythme fluide sur toute la largeur d’écran (gouttières, zones sous le header).
+ * Utiliser les classes px-site / pt-page / py-section sur les conteneurs de page.
+ */
+.px-site {
+  padding-left: clamp(1rem, 0.35rem + 3.2vw, 2rem);
+  padding-right: clamp(1rem, 0.35rem + 3.2vw, 2rem);
+}
+
+.pt-page {
+  padding-top: clamp(7.5rem, 4.25rem + 11vw, 15rem);
+}
+
+.py-section {
+  padding-top: clamp(2.25rem, 1.25rem + 4vw, 5rem);
+  padding-bottom: clamp(2.25rem, 1.25rem + 4vw, 5rem);
+}
+
+.py-section-lg {
+  padding-top: clamp(2.75rem, 1.5rem + 5.5vw, 6.5rem);
+  padding-bottom: clamp(2.75rem, 1.5rem + 5.5vw, 6.5rem);
 }
 
 .font-heading {

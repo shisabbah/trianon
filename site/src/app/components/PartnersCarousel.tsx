@@ -30,7 +30,8 @@ const logos: LogoItem[] = [
   {
     src: logoGeneraliSquare,
     alt: "Generali Luxembourg",
-    scaleClass: "scale-[1.52] sm:scale-[1.62] md:scale-[1.72]",
+    /** Zoom fluide : fichier avec beaucoup de marge, s’adapte à la taille d’écran */
+    scaleClass: "scale-[clamp(1.28,calc(1.15+2.8vmin),1.78)]",
   },
   { src: logoGenerali, alt: "Generali" },
   { src: swisslifeLogo, alt: "Swiss Life" },
@@ -68,31 +69,31 @@ export function PartnersCarousel() {
 
   return (
     <>
-      <div className="mt-6 flex w-full max-w-full items-stretch justify-center gap-1 sm:mt-8 sm:gap-2 md:items-center md:gap-5">
+      <div className="mt-[clamp(1.25rem,3vw,2rem)] flex w-full max-w-full items-stretch justify-center gap-[clamp(0.25rem,0.6vw+0.1rem,1.25rem)] md:items-center">
         <button
           type="button"
           aria-label="Partenaires précédents"
-          className="shrink-0 self-center text-3xl leading-none text-white/85 transition hover:text-white sm:text-4xl md:text-[54px]"
+          className="shrink-0 self-center text-[clamp(1.75rem,1rem+5.5vw,3.375rem)] leading-none text-white/85 transition hover:text-white"
           onClick={goPrev}
         >
           ‹
         </button>
 
-        <div className="flex min-h-[68px] min-w-0 flex-1 items-center justify-center gap-1 sm:min-h-[76px] sm:gap-1.5 md:min-h-[84px] md:gap-2 lg:gap-3">
+        <div className="flex min-h-[clamp(3.25rem,8vw+2rem,5.25rem)] min-w-0 flex-1 items-center justify-center gap-[clamp(0.2rem,0.5vw+0.08rem,0.85rem)]">
           {slots.map((logo, i) => (
             <div
               key={logo ? `${slideIndex}-${logo.alt}` : `${slideIndex}-empty-${i}`}
-              className="flex h-16 w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center overflow-visible rounded-[6px] bg-white/90 p-1.5 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] sm:h-[72px] sm:rounded-[8px] sm:p-2 md:h-[80px] md:max-w-[25%] md:flex-[1_1_0] md:p-3"
+              className="flex h-[clamp(3.5rem,2.25rem+8vw,5rem)] w-0 min-w-0 flex-[1_1_0] basis-0 items-center justify-center overflow-visible rounded-[clamp(6px,0.9vw,8px)] bg-white/90 p-[clamp(0.35rem,1vw+0.1rem,0.85rem)] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] md:max-w-[25%] md:flex-[1_1_0]"
               aria-hidden={logo ? undefined : true}
             >
               {logo ? (
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  className={`h-auto w-auto max-h-9 max-w-full origin-center object-contain sm:max-h-10 md:max-h-[52px] md:max-w-full ${logo.scaleClass ?? ""}`}
+                  className={`h-auto w-auto max-h-[clamp(2rem,1.1rem+5.5vw,3.25rem)] max-w-full origin-center object-contain md:max-w-full ${logo.scaleClass ?? ""}`}
                 />
               ) : (
-                <span className="block min-h-[28px] min-w-[28px] rounded-sm border border-white/35 bg-white/25 sm:min-h-[32px] sm:min-w-[32px] md:min-h-[40px] md:min-w-[40px]" />
+                <span className="block min-h-[clamp(1.5rem,4vw+0.75rem,2.5rem)] min-w-[clamp(1.5rem,4vw+0.75rem,2.5rem)] rounded-sm border border-white/35 bg-white/25" />
               )}
             </div>
           ))}
@@ -101,21 +102,21 @@ export function PartnersCarousel() {
         <button
           type="button"
           aria-label="Partenaires suivants"
-          className="shrink-0 self-center text-3xl leading-none text-white/85 transition hover:text-white sm:text-4xl md:text-[54px]"
+          className="shrink-0 self-center text-[clamp(1.75rem,1rem+5.5vw,3.375rem)] leading-none text-white/85 transition hover:text-white"
           onClick={goNext}
         >
           ›
         </button>
       </div>
 
-      <div className="mt-6 flex items-center justify-center gap-2">
+      <div className="mt-[clamp(1.25rem,2.5vw,1.75rem)] flex items-center justify-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
             type="button"
             aria-label={`Aller au groupe ${i + 1}`}
             aria-current={i === slideIndex ? "true" : undefined}
-            className={`h-[10px] w-[10px] rounded-full border border-white transition ${
+            className={`h-[clamp(0.5rem,0.35rem+0.6vw,0.625rem)] w-[clamp(0.5rem,0.35rem+0.6vw,0.625rem)] rounded-full border border-white transition ${
               i === slideIndex ? "bg-[#B9A889]" : "bg-transparent hover:bg-white/30"
             }`}
             onClick={() => setSlideIndex(i)}

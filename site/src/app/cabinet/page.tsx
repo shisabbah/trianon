@@ -9,8 +9,8 @@ import vigneCampagne from "../asset/vigne-campagne1.jpg";
 
 export default function CabinetPage() {
   return (
-    <main className="bg-white pt-36 text-neutral-900 sm:pt-40 md:pt-44">
-      <section className="relative min-h-[760px] overflow-hidden bg-white pb-24 pt-8 sm:min-h-[860px] sm:pb-28 sm:pt-10">
+    <main className="bg-white pt-page text-neutral-900">
+      <section className="relative min-h-[clamp(28rem,55svh,54rem)] overflow-hidden bg-white pb-[clamp(4.5rem,8vw,7.5rem)] pt-[clamp(1.5rem,2vw+0.5rem,2.75rem)]">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 top-44 z-0">
           <Image
             src={fondVague}
@@ -21,7 +21,7 @@ export default function CabinetPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl px-site">
           <div className="space-y-10 sm:space-y-14">
             <div className="space-y-3">
               <h1 className="font-cormorant-sc text-[32px] font-normal leading-none text-black sm:text-[38px] md:text-[44px]">
@@ -74,7 +74,7 @@ export default function CabinetPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-18 sm:py-20">
+      <section className="relative overflow-hidden py-section-lg">
         <div className="pointer-events-none absolute inset-0">
           <Image
             src={marbreClair}
@@ -85,7 +85,7 @@ export default function CabinetPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl px-site">
           <div className="text-center">
             <h2 className="font-cormorant-sc text-[32px] leading-tight text-black sm:text-[38px] md:text-[44px] md:leading-none">
               Notre méthode
@@ -149,7 +149,7 @@ export default function CabinetPage() {
           <div className="absolute inset-0 bg-black/45" />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-site sm:gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="space-y-2 text-white">
             <div className="font-cormorant-sc text-[clamp(20px,3vw,28px)] tracking-[0.18em]">
               TRIANON CAPITAL
