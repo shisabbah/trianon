@@ -4,7 +4,8 @@
   "description": "Le site Next.js vit dans site/ (npm install && npm run build s'y font dans ce dossier).",
   "scripts": {
     "build": "npm ci --prefix site && npm run build --prefix site && node scripts/prepare-cloudflare-deploy.mjs",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "wrangler deploy",
+    "upload": "wrangler versions upload"
   },
   "devDependencies": {
     "wrangler": "^4.97.0"
