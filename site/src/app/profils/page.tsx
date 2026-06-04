@@ -56,8 +56,8 @@ const profiles: {
 
 export default function ProfilsPage() {
   return (
-    <main className="bg-white pt-40 text-neutral-900 sm:pt-48 md:pt-52 lg:pt-60">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <main className="bg-white pt-page text-neutral-900">
+      <div className="mx-auto max-w-6xl px-site">
         <div className="space-y-3 pt-2 sm:pt-4 md:pt-6">
           <h1 className="font-cormorant-sc text-[32px] font-normal uppercase leading-none text-black sm:text-[38px] md:text-[44px]">
             Profils
@@ -78,7 +78,7 @@ export default function ProfilsPage() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-site py-[clamp(1.25rem,2.5vw,2.75rem)]">
           <div className="w-full max-w-4xl">
             <h2 className="font-cormorant-sc text-[clamp(1rem,3.4vw,2rem)] font-normal uppercase leading-[1.15] tracking-wide text-black drop-shadow-[0_1px_12px_rgba(255,255,255,0.95)] sm:leading-tight">
               <span className="block">Des parcours uniques,</span>
@@ -109,7 +109,7 @@ export default function ProfilsPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-site">
         <section className="mt-14 sm:mt-16">
           <div className="grid items-stretch gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8">
             {profiles.map((p) => (
@@ -128,7 +128,7 @@ export default function ProfilsPage() {
                     />
                   </div>
                 </div>
-                <div className="flex min-h-[10rem] flex-1 flex-col justify-center px-4 py-6 text-center sm:min-h-[11rem] sm:px-5 sm:py-7">
+                <div className="flex min-h-[10rem] flex-1 flex-col justify-center px-[clamp(0.9rem,1.5vw,1.35rem)] py-[clamp(1rem,2vw,1.75rem)] text-center sm:min-h-[11rem]">
                   <div className="flex w-full max-w-[20.5rem] flex-col items-center gap-2.5 sm:mx-auto sm:max-w-[22rem] sm:gap-3">
                     <h3 className="flex min-h-[3rem] w-full items-center justify-center font-cormorant-sc text-[16px] font-normal uppercase leading-snug tracking-[0.08em] text-black text-balance sm:min-h-[3.25rem] sm:text-[17px]">
                       {p.title}

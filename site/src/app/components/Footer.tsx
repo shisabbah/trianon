@@ -70,29 +70,29 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/25" />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-site py-[clamp(2.75rem,4vw,4.25rem)]">
         <div className="text-center">
           <div
-            className={`${cormorantSc.className} text-[17px] font-bold tracking-[0.26em] text-neutral-100 sm:text-[21px] sm:tracking-[0.3em] md:text-[26px] md:tracking-[0.32em]`}
+            className={`${cormorantSc.className} text-[clamp(1rem,0.65rem+1.8vw,1.65rem)] font-bold tracking-[clamp(0.22em,0.18em+0.35vw,0.32em)] text-neutral-100`}
           >
             TRIANON CAPITAL
           </div>
           <div
-            className={`${cormorantGaramond.className} mt-2 text-[10px] font-normal uppercase tracking-[0.28em] text-neutral-300 sm:text-[12px] sm:tracking-[0.35em]`}
+            className={`${cormorantGaramond.className} mt-2 text-[clamp(0.55rem,0.45rem+0.35vw,0.75rem)] font-normal uppercase tracking-[clamp(0.22em,0.18em+0.4vw,0.35em)] text-neutral-300`}
           >
             BOUTIQUE D’INGÉNIERIE FINANCIÈRE
           </div>
         </div>
 
-        <div className="mx-auto mt-10 grid gap-10 sm:mt-12 sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
+        <div className="mx-auto mt-[clamp(2rem,3vw+0.5rem,3.25rem)] grid gap-[clamp(2rem,3vw+0.5rem,3.25rem)] sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div
-              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+              className={`${cormorantSc.className} text-[clamp(1.15rem,0.85rem+1.2vw,1.55rem)] font-normal leading-tight text-white`}
             >
               À propos
             </div>
             <p
-              className={`${cormorantGaramond.className} text-[16px] font-normal leading-relaxed text-white`}
+              className={`${cormorantGaramond.className} text-[clamp(0.9rem,0.82rem+0.45vw,1rem)] font-normal leading-relaxed text-white`}
             >
               Trianon Capital accompagne des situations patrimoniales et
               financières complexes avec une approche indépendante, globale et
@@ -102,11 +102,11 @@ export default function Footer() {
 
           <div className="space-y-4">
             <div
-              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+              className={`${cormorantSc.className} text-[clamp(1.15rem,0.85rem+1.2vw,1.55rem)] font-normal leading-tight text-white`}
             >
               Liens rapides
             </div>
-            <ul className="space-y-3 text-[15px] sm:text-[16px]">
+            <ul className="space-y-3 text-[clamp(0.88rem,0.8rem+0.4vw,1rem)]">
               <li>
                 <Link
                   className={`${cormorantSc.className} text-white hover:opacity-90`}
@@ -152,11 +152,11 @@ export default function Footer() {
 
           <div className="space-y-4">
             <div
-              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+              className={`${cormorantSc.className} text-[clamp(1.15rem,0.85rem+1.2vw,1.55rem)] font-normal leading-tight text-white`}
             >
               Contact
             </div>
-            <ul className="space-y-3 text-[16px]">
+            <ul className="space-y-3 text-[clamp(0.9rem,0.82rem+0.45vw,1rem)]">
               <li>
                 <a
                   className={`${cormorantSc.className} text-white hover:opacity-90`}
@@ -181,11 +181,11 @@ export default function Footer() {
 
           <div className="space-y-4">
             <div
-              className={`${cormorantSc.className} text-[25px] font-normal leading-[35px] text-white`}
+              className={`${cormorantSc.className} text-[clamp(1.15rem,0.85rem+1.2vw,1.55rem)] font-normal leading-tight text-white`}
             >
               Suivez-nous
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-[clamp(0.5rem,1vw,0.85rem)]">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -200,9 +200,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-neutral-200/30 pt-6 text-center sm:mt-12">
+        <div className="mt-[clamp(2rem,3vw+0.5rem,3.25rem)] border-t border-neutral-200/30 pt-[clamp(1.1rem,2vw,1.75rem)] text-center">
           <div
-            className={`${cormorantGaramond.className} mx-auto max-w-4xl text-[12px] font-normal leading-snug text-white/90 sm:text-[14px] md:text-[16px] md:leading-[1.35]`}
+            className={`${cormorantGaramond.className} mx-auto max-w-4xl text-[clamp(0.65rem,0.55rem+0.35vw,1rem)] font-normal leading-snug text-white/90 md:leading-[1.35]`}
           >
             2026 © Tous droits réservés par Trianon Capital — Mentions légales —
             Politique de confidentialité

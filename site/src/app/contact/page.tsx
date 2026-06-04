@@ -41,10 +41,10 @@ const socialRow = [
 
 export default function ContactPage() {
   return (
-    <main className="bg-white pb-16 pt-40 text-neutral-900 sm:pb-20 sm:pt-48 md:pt-52 lg:pt-60">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-3 pt-2 sm:pt-4 md:pt-6">
-          <h1 className="font-cormorant-sc text-[32px] font-normal uppercase leading-none text-black sm:text-[38px] md:text-[44px]">
+    <main className="bg-white pb-[clamp(3.5rem,5vw+1rem,5.5rem)] pt-page text-neutral-900">
+      <div className="mx-auto max-w-6xl px-site">
+        <div className="space-y-3 pt-[clamp(0.35rem,1vw,1.75rem)]">
+          <h1 className="font-cormorant-sc text-[clamp(1.65rem,2.5vw+1rem,2.75rem)] font-normal uppercase leading-none text-black">
             Contact
           </h1>
           <div className="h-px w-full bg-neutral-300" />

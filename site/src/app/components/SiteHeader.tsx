@@ -66,8 +66,10 @@ export default function SiteHeader() {
   return (
     <header className={`${headerClass} pointer-events-none`}>
       <div
-        className={`relative mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8 ${
-          isHome ? "pb-4 sm:pb-6" : "pb-6 sm:pb-10 md:pb-12"
+        className={`relative mx-auto max-w-6xl px-site pt-[clamp(1.1rem,0.75rem+1.5vw,1.75rem)] ${
+          isHome
+            ? "pb-[clamp(0.85rem,0.5rem+1.2vw,1.75rem)]"
+            : "pb-[clamp(1.25rem,0.75rem+2.5vw,3.25rem)]"
         }`}
       >
         <button
@@ -75,7 +77,7 @@ export default function SiteHeader() {
           aria-expanded={menuOpen}
           aria-controls="site-nav-mobile"
           aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-          className={`pointer-events-auto absolute left-2 top-5 z-[60] flex h-11 w-11 items-center justify-center rounded-md sm:left-3 md:hidden ${textClass}`}
+          className={`pointer-events-auto absolute left-[clamp(0.35rem,0.5vw,0.75rem)] top-[clamp(1rem,0.5rem+1.5vw,1.35rem)] z-[60] flex h-11 w-11 items-center justify-center rounded-md md:hidden ${textClass}`}
           onClick={() => setMenuOpen((o) => !o)}
         >
           {menuOpen ? (
@@ -92,25 +94,25 @@ export default function SiteHeader() {
         </button>
 
         <div
-          className={`mx-auto max-w-[min(100%,280px)] pl-14 pr-6 text-center sm:max-w-none sm:px-6 md:px-0 ${textClass}`}
+          className={`mx-auto max-w-[min(100%,280px)] pl-14 pr-[clamp(1rem,3vw,1.75rem)] text-center sm:max-w-none sm:pl-14 md:px-0 ${textClass}`}
         >
           <div
-            className={`${cormorantSc.className} text-[13px] font-normal tracking-[0.3em] sm:text-[15px] sm:tracking-[0.35em] md:text-[16px] ${textClass}`}
+            className={`${cormorantSc.className} text-[clamp(0.75rem,0.55rem+0.9vw,1rem)] font-normal tracking-[clamp(0.22em,0.18em+0.4vw,0.35em)] ${textClass}`}
           >
             TRIANON CAPITAL
           </div>
           <div
-            className={`${cormorantGaramond.className} mt-1.5 text-[9px] font-normal uppercase tracking-[0.26em] sm:text-[10px] sm:tracking-[0.3em] md:text-[11px] md:tracking-[0.32em] ${subTextClass}`}
+            className={`${cormorantGaramond.className} mt-1.5 text-[clamp(0.5rem,0.42rem+0.35vw,0.7rem)] font-normal uppercase tracking-[clamp(0.2em,0.16em+0.35vw,0.32em)] ${subTextClass}`}
           >
             BOUTIQUE D’INGÉNIERIE FINANCIÈRE
           </div>
         </div>
 
         <nav
-          className={`${cormorantSc.className} pointer-events-auto mt-7 hidden flex-wrap justify-center gap-y-2 font-normal md:flex ${textClass} ${
+          className={`${cormorantSc.className} pointer-events-auto mt-[clamp(1.25rem,0.75rem+2vw,2rem)] hidden flex-wrap justify-center gap-y-2 font-normal md:flex ${textClass} ${
             isHome
-              ? "gap-x-10 text-[13px] uppercase tracking-[0.14em] lg:gap-x-14 lg:text-[14px] lg:tracking-[0.16em]"
-              : "gap-x-8 text-[15px] lg:gap-x-12 lg:text-[16px]"
+              ? "gap-x-[clamp(1.5rem,2vw+0.5rem,3.5rem)] text-[clamp(0.75rem,0.55rem+0.85vw,0.9rem)] uppercase tracking-[clamp(0.1em,0.08em+0.15vw,0.16em)]"
+              : "gap-x-[clamp(1.25rem,1.5vw+0.5rem,3rem)] text-[clamp(0.85rem,0.65rem+0.9vw,1rem)]"
           }`}
           aria-label="Navigation principale"
         >
@@ -136,23 +138,23 @@ export default function SiteHeader() {
       {menuOpen ? (
         <div
           id="site-nav-mobile"
-          className={`pointer-events-auto fixed inset-0 z-[55] flex flex-col overscroll-contain pt-[5.5rem] md:hidden ${menuPanelClass}`}
+          className={`pointer-events-auto fixed inset-0 z-[55] flex flex-col overscroll-contain pt-[clamp(4.5rem,10vw+2rem,6.5rem)] md:hidden ${menuPanelClass}`}
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
         >
           <nav
-            className="flex flex-col items-center gap-1 px-6 pb-10"
+            className="flex flex-col items-center gap-1 px-site pb-[clamp(2rem,5vw,2.75rem)]"
             aria-label="Navigation principale"
           >
             {navItems.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`${cormorantSc.className} w-full max-w-xs border-b py-4 text-center font-normal hover:opacity-80 sm:text-[17px] ${
+                className={`${cormorantSc.className} w-full max-w-xs border-b py-[clamp(0.85rem,0.5rem+1.5vw,1.15rem)] text-center font-normal hover:opacity-80 ${
                   isHome
-                    ? "border-white/20 text-[15px] uppercase tracking-[0.12em]"
-                    : "border-neutral-200 text-[17px]"
+                    ? "border-white/20 text-[clamp(0.85rem,0.65rem+0.9vw,1.05rem)] uppercase tracking-[0.12em]"
+                    : "border-neutral-200 text-[clamp(0.9rem,0.7rem+0.95vw,1.05rem)]"
                 }`}
                 onClick={() => setMenuOpen(false)}
               >

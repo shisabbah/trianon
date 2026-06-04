@@ -15,6 +15,10 @@ import vigne from "./asset/vigne.png";
 const publicAsset = (path: string) =>
   `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
+const heroVideoSrc =
+  process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim() ||
+  publicAsset("/0_Villas_Hotels_3840x2160.mp4");
+
 export default function Home() {
   return (
     <main className="bg-white text-neutral-900">
@@ -28,7 +32,7 @@ export default function Home() {
           playsInline
         >
           <source
-            src={publicAsset("/0_Villas_Hotels_3840x2160.mp4")}
+            src={heroVideoSrc}
             type="video/mp4"
           />
         </video>
@@ -39,7 +43,7 @@ export default function Home() {
           aria-hidden
         />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 pb-28 pt-32 sm:px-6 sm:pb-32 sm:pt-36 md:pt-40 lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-site pb-[clamp(5.5rem,10vw+2rem,8.5rem)] pt-[clamp(5.5rem,6vw+3rem,10.5rem)]">
           <div className="w-full max-w-3xl space-y-4 text-left sm:space-y-5">
             <h1 className="font-cormorant-sc w-fit max-w-full whitespace-nowrap text-[clamp(12px,4.2vw,48px)] font-normal uppercase leading-none tracking-[0.08em] text-white sm:tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.18em]">
               BÂTIR. STRUCTURER. PROTÉGER.
@@ -54,13 +58,13 @@ export default function Home() {
       {/* Le Cabinet — fond tlv uniquement (sans marbre) */}
       <section
         id="cabinet"
-        className="relative overflow-hidden py-14 text-neutral-900 sm:py-20 md:py-24"
+        className="relative overflow-hidden py-section-lg text-neutral-900"
       >
         <div className="pointer-events-none absolute inset-0 z-0">
           <Image src={tlv} alt="" fill className="object-cover" priority />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-6xl px-site">
           <div className="grid gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
             {/* Espace réservé : même grille qu’avec la photo, texte inchangé à droite */}
             <div
@@ -97,14 +101,14 @@ export default function Home() {
       </section>
 
       {/* Domaine d’intervention */}
-      <section className="relative overflow-hidden py-12 sm:py-16 md:py-20">
+      <section className="relative overflow-hidden py-section-lg">
         <Image
           src={marbre}
           alt="Fond marbré"
           fill
           className="object-cover"
         />
-        <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-[1280px] px-site">
           <h2 className="font-cormorant-sc text-center text-[30px] font-normal leading-tight text-black sm:text-[40px] md:text-[48px] lg:text-[56px] lg:leading-[1.1]">
             Notre domaine d’intervention
           </h2>
@@ -189,8 +193,8 @@ export default function Home() {
             className="object-cover"
           />
 
-          <div className="relative z-10 mx-auto flex min-h-[240px] w-full max-w-[1280px] flex-col items-center justify-center px-4 py-6 text-white sm:min-h-[260px] sm:px-6 sm:py-8 md:min-h-0 md:h-[379px] md:px-8 md:py-0">
-            <h3 className="font-cormorant-sc text-center text-[28px] leading-tight sm:text-[34px] md:text-[40px] md:leading-[35px]">
+          <div className="relative z-10 mx-auto flex min-h-[clamp(14rem,35vw,17.5rem)] w-full max-w-[1280px] flex-col items-center justify-center px-site py-[clamp(1rem,2.5vw,2rem)] text-white md:min-h-0 md:h-[379px] md:py-0">
+            <h3 className="font-cormorant-sc text-center text-[clamp(1.35rem,2.5vw+0.75rem,2.5rem)] leading-tight md:leading-[1.1]">
               Nos Partenaires
             </h3>
 
@@ -208,7 +212,7 @@ export default function Home() {
             className="object-cover"
           />
 
-          <div className="relative z-10 grid min-h-0 gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-12 md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-12 lg:px-20">
+          <div className="relative z-10 grid min-h-0 gap-[clamp(1.25rem,2vw+0.5rem,2.75rem)] px-site py-[clamp(2rem,4vw,3.25rem)] md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-[clamp(2rem,4vw+1rem,5rem)] lg:px-[clamp(2.5rem,5vw+1rem,6.25rem)]">
             <div className="max-w-[420px] text-black">
               <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(22px,5vw,52px)] leading-tight md:leading-[42px]">
                 Profils accompagnés
@@ -248,7 +252,7 @@ export default function Home() {
 
       {/* Bandeau — premier échange (fond crocro) */}
       <section
-        className="relative overflow-hidden py-10 sm:py-12 lg:py-14"
+        className="relative overflow-hidden py-[clamp(2.25rem,3vw+1rem,3.75rem)]"
         aria-labelledby="home-premier-echange-heading"
       >
         <div className="pointer-events-none absolute inset-0">
@@ -261,7 +265,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12 lg:px-8">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-[clamp(2rem,3vw+0.5rem,3.25rem)] px-site lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-[clamp(2.25rem,3vw+0.5rem,3.25rem)]">
           <div className="space-y-2 text-white">
             <div className="font-cormorant-sc text-[clamp(20px,3vw,28px)] tracking-[0.18em]">
               TRIANON CAPITAL
@@ -307,7 +311,7 @@ export default function Home() {
       {/* Approche */}
       <section
         id="approche"
-        className="relative overflow-hidden py-12 text-white sm:py-16 md:py-20"
+        className="relative overflow-hidden py-section-lg text-white"
       >
         <Image
           src={vigne}
@@ -316,12 +320,12 @@ export default function Home() {
           className="object-cover"
         />
 
-        <div className="relative z-10 mx-auto max-w-[1280px] space-y-8 px-4 sm:space-y-10 sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto max-w-[1280px] space-y-[clamp(1.75rem,3vw,2.75rem)] px-site">
           <div className="relative text-center">
-            <h2 className="font-cormorant-sc text-[28px] font-normal leading-tight sm:text-[34px] md:text-[40px] md:leading-[35px]">
+            <h2 className="font-cormorant-sc text-[clamp(1.35rem,2.2vw+0.75rem,2.5rem)] font-normal leading-tight md:leading-[1.1]">
               Notre approche
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto font-cormorant-garamond text-[14px] leading-snug text-white/90 sm:mt-6 sm:text-[15px] md:text-[16px]">
+            <p className="mx-auto mt-4 max-w-2xl font-cormorant-garamond text-[clamp(0.85rem,0.3vw+0.82rem,1rem)] leading-snug text-white/90 sm:mt-6">
               Nous construisons des stratégies patrimoniales cohérentes, pensées
               dans le temps long, en tenant compte de vos objectifs, de votre
               situation et des équilibres à préserver.
