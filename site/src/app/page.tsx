@@ -17,7 +17,7 @@ const publicAsset = (path: string) =>
 
 const heroVideoSrc =
   process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim() ||
-  "/0_Villas_Hotels_3840x2160 (1).mp4";
+  "/Villas_Hotels.mp4";
 
 export default function Home() {
   return (
