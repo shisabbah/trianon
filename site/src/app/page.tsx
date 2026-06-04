@@ -17,7 +17,7 @@ const publicAsset = (path: string) =>
 
 const heroVideoSrc =
   process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim() ||
-  "https://github.com/shisabbah/trianon/releases/download/v1.0.0/0_Villas_Hotels_3840x2160_compressed.mp4";
+  "/0_Villas_Hotels_3840x2160 (1).mp4";
 
 export default function Home() {
   return (
@@ -212,7 +212,7 @@ export default function Home() {
             className="object-cover"
           />
 
-          <div className="relative z-10 grid min-h-0 gap-[clamp(1.25rem,2vw+0.5rem,2.75rem)] px-site py-[clamp(2rem,4vw,3.25rem)] md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-[clamp(2rem,4vw+1rem,3.25rem)] md:gap-[clamp(1.5rem,3vw+0.5rem,3.25rem)]">
+          <div className="relative z-10 grid min-h-0 gap-[clamp(1.25rem,2vw+0.5rem,2.75rem)] px-site py-[clamp(2rem,4vw,3.25rem)] md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-[clamp(2rem,4vw+1rem,3.2rem)]">
             <div className="max-w-[420px] text-black">
               <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(22px,5vw,52px)] leading-tight md:leading-[42px]">
                 Profils accompagnés
@@ -226,9 +226,12 @@ export default function Home() {
                 montants. Chaque profil présente des enjeux spécifiques qui
                 demandent une compréhension fine et une approche adaptée.
               </p>
-              <button className="mt-8 h-[38px] min-w-[142px] bg-[#B9A889] px-8 font-cormorant-sc text-[16px] text-white">
+              <Link
+                href="#contact"
+                className="mt-8 inline-flex h-[38px] min-w-[142px] items-center justify-center bg-[#B9A889] px-8 font-cormorant-sc text-[16px] text-white"
+              >
                 En savoir plus
-              </button>
+              </Link>
             </div>
 
             <div className="flex flex-col justify-center text-black">
@@ -393,9 +396,12 @@ export default function Home() {
           </div>
 
           <div className="relative text-center">
-            <button className="h-[38px] min-w-[142px] bg-[#B9A889] px-8 font-cormorant-sc text-[16px] text-white">
+            <Link
+              href="#contact"
+              className="inline-flex h-[38px] min-w-[142px] items-center justify-center bg-[#B9A889] px-8 font-cormorant-sc text-[16px] text-white"
+            >
               En savoir plus
-            </button>
+            </Link>
           </div>
         </div>
       </section>
