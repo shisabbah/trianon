@@ -27,5 +27,5 @@ jobs:
       - name: Deploy to Cloudflare
         run: npx wrangler deploy
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.760ca14937149d8be957d843d5d39463 }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.cfat_nBB9Cqz7Zv76jLJS6t81tgBoeMDhfEelJDvqkVhr437ff4e6 }}
