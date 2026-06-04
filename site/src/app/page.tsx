@@ -17,7 +17,7 @@ const publicAsset = (path: string) =>
 
 const heroVideoSrc =
   process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim() ||
-  publicAsset("/0_Villas_Hotels_3840x2160.mp4");
+  "https://github.com/shisabbah/trianon/releases/download/v1.0.0/0_Villas_Hotels_3840x2160_compressed.mp4";
 
 export default function Home() {
   return (
@@ -45,10 +45,10 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-site pb-[clamp(5.5rem,10vw+2rem,8.5rem)] pt-[clamp(5.5rem,6vw+3rem,10.5rem)]">
           <div className="w-full max-w-3xl space-y-4 text-left sm:space-y-5">
-            <h1 className="font-cormorant-sc w-fit max-w-full whitespace-nowrap text-[clamp(12px,4.2vw,48px)] font-normal uppercase leading-none tracking-[0.08em] text-white sm:tracking-[0.12em] md:tracking-[0.16em] lg:tracking-[0.18em]">
+            <h1 className="font-cormorant-sc w-fit max-w-full whitespace-nowrap text-[clamp(12px,4.2vw,48px)] font-normal uppercase leading-none tracking-[0.08em] text-white sm:tracking-[0.12em]">
               BÂTIR. STRUCTURER. PROTÉGER.
             </h1>
-            <p className="font-cormorant-sc text-[11px] !font-bold uppercase leading-relaxed tracking-[0.26em] text-white sm:text-[12px] sm:tracking-[0.3em] md:text-[13px] md:tracking-[0.32em] lg:text-[14px]">
+            <p className="font-cormorant-sc text-[11px] !font-bold uppercase leading-relaxed tracking-[0.26em] text-white sm:text-[12px] sm:tracking-[0.3em] md:text-[13px] md:tracking-[0.32em]">
               DES CONSEILS PENSÉS POUR VOUS.
             </p>
           </div>
@@ -66,23 +66,23 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-6xl px-site">
           <div className="grid gap-10 sm:gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
-            {/* Espace réservé : même grille qu’avec la photo, texte inchangé à droite */}
+            {/* Espace réservé : même grille qu'avec la photo, texte inchangé à droite */}
             <div
               className="hidden min-h-0 w-full max-w-md lg:block"
               aria-hidden="true"
             />
             <div className="min-w-0 space-y-5 sm:space-y-6">
               <h2 className="font-cormorant-sc text-[28px] font-normal leading-[1.12] text-black sm:text-[34px] md:text-[40px]">
-                Boutique d’ingénierie patrimoniale indépendante
+                Boutique d'ingénierie patrimoniale indépendante
               </h2>
               <p className="font-cormorant-sc text-[17px] font-normal leading-snug text-black sm:text-[18px] md:text-[20px]">
                 Stratégie patrimoniale sur-mesure, optimisation fiscale, gestion
-                d’actif
+                d'actif
               </p>
               <div className="space-y-4 font-cormorant-garamond text-[15px] leading-relaxed text-neutral-800 sm:text-[16px]">
                 <p>
                   Trianon Capital accompagne les cadres, dirigeants, professions
-                  libérales et indépendants dans la gestion, l’optimisation fiscale
+                  libérales et indépendants dans la gestion, l'optimisation fiscale
                   et la structuration de leur patrimoine et de leur entreprise.
                   Nous intervenons sur des situations simples comme complexes, avec
                   une approche globale et sur-mesure.
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Domaine d’intervention */}
+      {/* Domaine d'intervention */}
       <section className="relative overflow-hidden py-section-lg">
         <Image
           src={marbre}
@@ -110,9 +110,9 @@ export default function Home() {
         />
         <div className="relative z-10 mx-auto max-w-[1280px] px-site">
           <h2 className="font-cormorant-sc text-center text-[30px] font-normal leading-tight text-black sm:text-[40px] md:text-[48px] lg:text-[56px] lg:leading-[1.1]">
-            Notre domaine d’intervention
+            Notre domaine d'intervention
           </h2>
-          <p className="mx-auto mt-3 max-w-[760px] font-cormorant-garamond text-center text-[18px] font-normal leading-snug text-black sm:mt-4 sm:text-[22px] md:text-[28px] lg:text-[32px] lg:leading-[36px]">
+          <p className="mx-auto mt-3 max-w-[760px] font-cormorant-garamond text-center text-[18px] font-normal leading-snug text-black sm:mt-4 sm:text-[22px] md:text-[28px] lg:text-[32px]">
             Une approche globale pour structurer, optimiser et sécuriser votre
             patrimoine à chaque étape de votre vie.
           </p>
@@ -121,18 +121,18 @@ export default function Home() {
             {(
               [
                 {
-                  title: "Gestion\u00A0d’actifs",
+                  title: "Gestion\u00A0d'actifs",
                   items: [
                     "Structuration et diversification du patrimoine",
                     "Optimisation des placements financiers et immobiliers",
-                    "Stratégies d’investissement à moyen et long terme",
+                    "Stratégies d'investissement à moyen et long terme",
                   ],
                 },
                 {
                   title: "Financement",
                   items: [
                     "Analyse des solutions de financement disponibles",
-                    "Optimisation de l’effet de levier",
+                    "Optimisation de l'effet de levier",
                     "Structuration de projets immobiliers et professionnels",
                   ],
                 },
@@ -193,7 +193,7 @@ export default function Home() {
             className="object-cover"
           />
 
-          <div className="relative z-10 mx-auto flex min-h-[clamp(14rem,35vw,17.5rem)] w-full max-w-[1280px] flex-col items-center justify-center px-site py-[clamp(1rem,2.5vw,2rem)] text-white md:min-h-0 md:h-[379px] md:py-0">
+          <div className="relative z-10 mx-auto flex min-h-[clamp(14rem,35vw,17.5rem)] w-full max-w-[1280px] flex-col items-center justify-center px-site py-[clamp(1rem,2.5vw,2rem)] text-white">
             <h3 className="font-cormorant-sc text-center text-[clamp(1.35rem,2.5vw+0.75rem,2.5rem)] leading-tight md:leading-[1.1]">
               Nos Partenaires
             </h3>
@@ -212,7 +212,7 @@ export default function Home() {
             className="object-cover"
           />
 
-          <div className="relative z-10 grid min-h-0 gap-[clamp(1.25rem,2vw+0.5rem,2.75rem)] px-site py-[clamp(2rem,4vw,3.25rem)] md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-[clamp(2rem,4vw+1rem,5rem)] lg:px-[clamp(2.5rem,5vw+1rem,6.25rem)]">
+          <div className="relative z-10 grid min-h-0 gap-[clamp(1.25rem,2vw+0.5rem,2.75rem)] px-site py-[clamp(2rem,4vw,3.25rem)] md:min-h-[620px] md:grid-cols-[1fr_1fr] md:px-[clamp(2rem,4vw+1rem,3.25rem)] md:gap-[clamp(1.5rem,3vw+0.5rem,3.25rem)]">
             <div className="max-w-[420px] text-black">
               <h2 className="font-cormorant-sc whitespace-nowrap text-[clamp(22px,5vw,52px)] leading-tight md:leading-[42px]">
                 Profils accompagnés
@@ -265,13 +265,13 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-[clamp(2rem,3vw+0.5rem,3.25rem)] px-site lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-[clamp(2.25rem,3vw+0.5rem,3.25rem)]">
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-[clamp(2rem,3vw+0.5rem,3.25rem)] px-site lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-[clamp(2.25rem,3vw+0.75rem,3.5rem)]">
           <div className="space-y-2 text-white">
             <div className="font-cormorant-sc text-[clamp(20px,3vw,28px)] tracking-[0.18em]">
               TRIANON CAPITAL
             </div>
             <p className="font-cormorant-sc text-[9px] uppercase tracking-[0.24em] text-neutral-200 sm:text-[10px] sm:tracking-[0.28em] md:text-[11px]">
-              Boutique d’ingénierie financière
+              Boutique d'ingénierie financière
             </p>
           </div>
 
@@ -287,7 +287,7 @@ export default function Home() {
                 Nous prenons le temps de comprendre votre situation et vos
                 objectifs avant toute recommandation. Chaque décision est pensée
                 dans une perspective globale, en tenant compte de son impact dans
-                le temps et de ses interactions avec l’ensemble de votre
+                le temps et de ses interactions avec l'ensemble de votre
                 structure.
               </p>
               <p>
@@ -299,7 +299,7 @@ export default function Home() {
             <div className="pt-1">
               <Link
                 href="#contact"
-                className="inline-flex h-10 min-w-[150px] items-center justify-center bg-[#352A16] px-7 font-cormorant-sc text-[14px] font-normal uppercase tracking-wide text-white sm:h-11 sm:text-[15px] md:text-[16px]"
+                className="inline-flex h-10 min-w-[150px] items-center justify-center bg-[#352A16] px-7 font-cormorant-sc text-[14px] font-normal uppercase tracking-wide text-white sm:h-11 sm:text-[15px]"
               >
                 Prendre RDV
               </Link>
