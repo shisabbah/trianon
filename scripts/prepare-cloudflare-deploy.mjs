@@ -1,17 +1,25 @@
-import { writeFileSync } from "node:fs";
+import { statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const outDir = join(process.cwd(), "site", "out");
-const largeAsset = "0_Villas_Hotels_3840x2160.mp4";
+const maxBytes = 25 * 1024 * 1024;
+const heroFile = "Villas_Hotels.mp4";
+const heroPath = join(outDir, heroFile);
 
-writeFileSync(
-  join(outDir, ".assetsignore"),
-  `${largeAsset}\n`,
-  "utf8",
-);
+let ignore = "";
+try {
+  if (statSync(heroPath).size > maxBytes) {
+    ignore = `${heroFile}\n`;
+    if (!process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim()) {
+      console.warn(
+        `[cloudflare] ${heroFile} est exclu du deploy (>25 Mo). Définissez NEXT_PUBLIC_HERO_VIDEO_URL (R2, Stream, etc.).`,
+      );
+    }
+  }
+} catch {
+  // pas de vidéo dans out (build sans public)
+}
 
-if (!process.env.NEXT_PUBLIC_HERO_VIDEO_URL?.trim()) {
-  console.warn(
-    `[cloudflare] ${largeAsset} est exclu du deploy (>25 Mo). Définissez NEXT_PUBLIC_HERO_VIDEO_URL (R2, Stream, etc.) pour la vidéo hero.`,
-  );
+if (ignore) {
+  writeFileSync(join(outDir, ".assetsignore"), ignore, "utf8");
 }
